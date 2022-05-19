@@ -18,7 +18,6 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-lA-CsV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kgs_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Inz-xx-YPp">
                                 <rect key="frame" x="135" y="109" width="144" height="144"/>
@@ -112,6 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonLogin" destination="60h-BM-7nj" id="JpD-NQ-E7N"/>
+                        <outlet property="imageViewBack" destination="BwL-lA-CsV" id="Dxo-b9-pQi"/>
                         <outlet property="textFieldPassword" destination="Mov-1G-bPr" id="r9c-11-nRz"/>
                         <outlet property="textFieldUserName" destination="mtZ-PG-bJT" id="L8Z-DL-P1k"/>
                         <outlet property="viewForm" destination="kiX-EB-4Uy" id="Tvm-fP-KpS"/>
