@@ -9,7 +9,6 @@ import UIKit
 
 extension UITextField {
     func setLeftIcon(iconName : String){
-        print("here")
         self.leftView = UIView(frame: CGRect(x: 10, y: 0, width: 40, height: 40))
         self.leftViewMode = .always
         //self.leftView?.backgroundColor = .blue
@@ -23,46 +22,122 @@ extension UITextField {
         
         // self.layer.borderWidth = 5
         self.layer.borderColor = UIColor.darkText.cgColor
+        
     }
 }
 
 extension UIView {
-    func dropShadow(color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
+    
+    enum ShadowPath{
+        case top
+        case bottom
+        case left
+        case right
+    }
+    
+    func getPath(for arr: [ShadowPath]) -> CGPath{
+        let cgPath: CGMutablePath = CGMutablePath()
+        if(arr.contains(.top)) {
+            var boundNow:CGRect = self.bounds
+            boundNow.size.height = 5
+            let path = UIBezierPath.init( rect: boundNow).cgPath
+            cgPath.addPath(path)
+        }
+        if(arr.contains(.bottom)){
+            var boundNow:CGRect = self.bounds
+            boundNow.origin.y += boundNow.size.height
+            boundNow.size.height = 5
+            let path = UIBezierPath.init( rect: boundNow).cgPath
+            cgPath.addPath(path)
+        }
+        if(arr.contains(.left)){
+            var boundNow:CGRect = self.bounds
+            boundNow.size.width = 5
+            let path = UIBezierPath.init( rect: boundNow).cgPath
+            cgPath.addPath(path)
+        }
+        if(arr.contains(.right)){
+            var boundNow:CGRect = self.bounds
+            boundNow.origin.x += boundNow.size.width
+            boundNow.size.width = 5
+            let path = UIBezierPath.init( rect: boundNow).cgPath
+            cgPath.addPath(path)
+        }
+        return cgPath
+    }
+    
+
+    func dropShadowPath(_ bounds: CGPath, color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
         layer.masksToBounds = false
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = opacity
         layer.shadowOffset = offset
         layer.shadowRadius = radius
-        
-        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shadowPath = bounds
         layer.shouldRasterize = false
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-}
-
-extension UIButton {
-    func createRoundButton(){
-        layer.cornerRadius = 0.5 * bounds.size.width
-        clipsToBounds = true
+    
+    func dropShadow(color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
+        let path = UIBezierPath(rect: self.bounds).cgPath
+        dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
+    }
+    
+    func dropShadowHalfRounded(color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
         
-        layer.borderWidth = 10
-        layer.borderColor = UIColor.white.cgColor
+        let path = UIBezierPath(arcCenter: CGPoint(x: layer.bounds.width / 2, y: layer.bounds.height / 2), radius: layer.frame.width / 2 , startAngle: 0.14, endAngle: 3.0, clockwise: true).cgPath
+        dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
+   }
+    func dropShadowRounded(color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
+        let path = UIBezierPath.init(ovalIn: self.bounds).cgPath
+        dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
+    }
+    func dropShadowRectTop(color: UIColor , opacity : Float = 0.5 , offset :CGSize , radius : CGFloat = 1 , scale : Bool = true){
+        var boundNow:CGRect = self.bounds
+        boundNow.size.height = 5
+        let path = UIBezierPath.init( rect: boundNow).cgPath
+        dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
+    }
+    
+    func dropShadowRectBottom(color: UIColor , opacity : Float = 0.5 , offset :CGSize , radius : CGFloat = 1 , scale : Bool = true){
+        var boundNow:CGRect = self.bounds
+        boundNow.origin.y += boundNow.size.height+5
+        boundNow.size.height = 5
+        let path = UIBezierPath.init( rect: boundNow).cgPath
+        dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
+    }
+    
+    func dropShadowRectLeading(color: UIColor , opacity : Float = 0.5 , offset :CGSize , radius : CGFloat = 1 , scale : Bool = true){
+        var boundNow:CGRect = self.bounds
+        boundNow.size.width = 5
+        let path = UIBezierPath.init( rect: boundNow).cgPath
+        dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
+    }
+    
+    
+    func dropShadowRectTrailing(color: UIColor , opacity : Float = 0.5 , offset :CGSize , radius : CGFloat = 1 , scale : Bool = true){
+        var boundNow:CGRect = self.bounds
+        boundNow.origin.x += boundNow.size.width+5
+        boundNow.size.width = 5
+        let path = UIBezierPath.init( rect: boundNow).cgPath
+        dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
     }
 }
+
 
 extension UIView{
-    // For insert layer in Foreground
-    func addBlackGradientLayerInForeground(frame: CGRect, colors:[UIColor]){
-        let gradient = CAGradientLayer()
-        gradient.frame = frame
-        gradient.colors = colors.map{$0.cgColor}
-        self.layer.addSublayer(gradient)
-    }
+
     // For insert layer in background
-    func addBlackGradientLayerInBackground(frame: CGRect, colors:[UIColor]){
+    func addBlackGradientLayerInBackground(frame: CGRect, colors:[UIColor] , cornerRadius : CGFloat? = nil ){
         let gradient = CAGradientLayer()
         gradient.frame = frame
         gradient.colors = colors.map{$0.cgColor}
-        self.layer.insertSublayer(gradient, at: 0)
+        gradient.startPoint  = CGPoint.zero
+        gradient.masksToBounds = true
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        if let cornerRadius = cornerRadius {
+            gradient.cornerRadius = cornerRadius
+        }
+        layer.insertSublayer(gradient, at: 0)
     }
 }
