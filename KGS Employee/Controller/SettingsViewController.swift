@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //UIImage.init(named: <#T##String#>)
         self.navigationController?.navigationBar.isHidden = true
         guard let customFont = UIFont(name: "SFProDisplay-Medium", size: 16) else {
             fatalError("""

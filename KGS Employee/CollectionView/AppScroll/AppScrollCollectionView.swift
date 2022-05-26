@@ -9,7 +9,6 @@ import UIKit
 
 class AppScrollCollectionView: UICollectionView {
     let cellId = "AppScrollCollectionViewCell"
-    let headerId = "HeaderCell"
     let itemsPerRow : CGFloat = 1
     let sectionInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     
@@ -21,6 +20,8 @@ class AppScrollCollectionView: UICollectionView {
     func initialize(){
         self.delegate = self
         self.dataSource = self
+        self.reloadData()
+       // let indexPath = IndexPath(row: 333, section: 0)
     }
 }
 
@@ -29,22 +30,12 @@ extension AppScrollCollectionView : UICollectionViewDataSource {
         return StaticData.appDataScroll.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.headerId, for: indexPath)
-            headerView.dropShadowRectTop(color: UIColor.red, opacity: 1, offset: CGSize(width: 5, height: 5), radius: 20, scale: false)
-            return headerView
-        default:
-            preconditionFailure("invalid element type")
-        }
-    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? AppScrollCollectionViewCell
         else {
             preconditionFailure("invalid cell type")
         }
-        cell.loadCell(StaticData.appDataScroll[indexPath.row])
+        cell.loadCell(StaticData.appDataScroll[indexPath.row%StaticData.appDataScroll.count])
         if(indexPath.row+1==StaticData.appDataScroll.count){
             cell.dummyView.isHidden = true
         }else{

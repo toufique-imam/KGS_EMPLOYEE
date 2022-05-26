@@ -22,11 +22,11 @@ class User : Codable {
     
     
     init(name:String = "placeholder name", password:String = "placeholder password",fullName:String = "full name placeholder",
-     designation:String="designation placeholder",
-     phone:String="01521108127",
-     email:String="placeholder@gmail.com",
-     department:String="ios-placeholder",
-    imagePath:String="placeholderpath"
+         designation:String="designation placeholder",
+         phone:String="01521108127",
+         email:String="placeholder@gmail.com",
+         department:String="ios-placeholder",
+         imagePath:String="placeholderpath"
     ) {
         
         self.name = name
@@ -39,30 +39,6 @@ class User : Codable {
         self.imagePath = imagePath
         
     }
-    
-//    required convenience init(coder aDecoder : NSCoder) {
-//
-//        let name = aDecoder.decodeObject(forKey: "name") as! String
-//        let password = aDecoder.decodeObject(forKey: "password") as! String
-//        let fullName = aDecoder.decodeObject(forKey: "fullName") as! String
-//        let designation = aDecoder.decodeObject(forKey: "designation") as! String
-//        let phone = aDecoder.decodeObject(forKey: "phone") as! String
-//        let email = aDecoder.decodeObject(forKey: "email") as! String
-//        let department = aDecoder.decodeObject(forKey: "department") as! String
-//        let imagePath = aDecoder.decodeObject(forKey: "imagePath") as! String
-//
-//        self.init(name: name, password: password, fullName: fullName, designation: designation, phone: phone, email: email, department: department, imagePath: imagePath)
-//    }
-//
-//    func encode(with coder: NSCoder) {
-//        coder.encode(self.name , forKey: self.name.self)
-//        coder.encode(self.password , forKey: self.password.self)
-//        coder.encode(self.fullName , forKey: self.fullName.self)
-//        coder.encode(self.designation , forKey: self.designation.self)
-//        coder.encode(self.phone , forKey: self.phone.self)
-//        coder.encode(self.email , forKey: self.email.self)
-//        coder.encode(self.imagePath , forKey: self.imagePath.self)
-//    }
 }
 
 class CurrentUser {
@@ -96,7 +72,7 @@ class CurrentUser {
             if let encoded = try? encoder.encode(user){
                 standardUserDefaults.set(encoded, forKey: CurrentUser.loginKey)
             }
-            return true 
+            return true
         }else{
             return false
         }
@@ -105,10 +81,10 @@ class CurrentUser {
         //TODO: check user name and password in UserDefaults
         var savedUsers: [User] = []
         if let objects = UserDefaults.standard.value(forKey: CurrentUser.users) as? Data {
-           let decoder = JSONDecoder()
-           if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
-              savedUsers = objectsDecoded
-           }
+            let decoder = JSONDecoder()
+            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
+                savedUsers = objectsDecoded
+            }
         }
         
         for suser in savedUsers {
@@ -120,14 +96,14 @@ class CurrentUser {
         return false
     }
     
-
+    
     func addUser(user: User){
         var savedUsers: [User] = []
         if let objects = UserDefaults.standard.value(forKey: CurrentUser.users) as? Data {
-           let decoder = JSONDecoder()
-           if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
-              savedUsers = objectsDecoded
-           }
+            let decoder = JSONDecoder()
+            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
+                savedUsers = objectsDecoded
+            }
         }
         
         

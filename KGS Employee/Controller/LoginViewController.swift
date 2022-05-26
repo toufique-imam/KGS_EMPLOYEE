@@ -26,16 +26,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationController()
-        let user = User()
-        user.name = "nuhash"
-        user.password = "123"
-        user.fullName = "toufique imam"
-        user.email = "2013nuhash@gmail.com"
-        user.department = "ios"
-        user.designation = "Jr swe"
-        user.imagePath = "icon_profile"
-//        user.image = UIImage(named: user.imagePath)
-        CurrentUser.shared.addUser(user: user)
+//        let user = User()
+//        user.name = "nuhash"
+//        user.password = "123"
+//        user.fullName = "toufique imam"
+//        user.email = "2013nuhash@gmail.com"
+//        user.department = "ios"
+//        user.designation = "Jr swe"
+//        user.imagePath = "icon_profile"
+//        CurrentUser.shared.addUser(user: user)
         
         textFieldPassword.delegate = self
         textFieldUserName.delegate = self

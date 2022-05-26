@@ -14,8 +14,6 @@ class AppInfo {
     var description = "placeholder description"
     var imagePath  = ""
     var iconPath = ""
-//    var iconImage : UIImage? = nil
-//    var mainImage : UIImage? = nil
     
     var appType = AppType.fullInfo
     

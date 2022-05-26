@@ -53,6 +53,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Get started">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToGetStarted:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h1t-qZ-9bi"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wvA-1K-Nr5" customClass="AppCollectionView" customModule="KGS_Employee" customModuleProvider="target">
                                 <rect key="frame" x="10" y="372" width="355" height="300"/>

@@ -27,16 +27,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jCM-Yd-YbY">
-                                <rect key="frame" x="20" y="69" width="374" height="33"/>
+                                <rect key="frame" x="20" y="69" width="374" height="33.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7z-Yq-5CR">
-                                        <rect key="frame" x="0.0" y="0.0" width="103" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="33.5"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
                                         <color key="textColor" name="TitleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed7-Ur-byt">
-                                        <rect key="frame" x="313.5" y="0.0" width="60.5" height="33"/>
+                                        <rect key="frame" x="313.5" y="0.0" width="60.5" height="33.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Close">
                                             <color key="baseForegroundColor" name="TitleColor"/>
@@ -48,7 +48,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tVM-jg-bNk" customClass="SettingsCollectionView" customModule="KGS_Employee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="112" width="414" height="711"/>
+                                <rect key="frame" x="0.0" y="112.5" width="414" height="710.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="B3b-pz-ShN">
                                     <size key="itemSize" width="128" height="128"/>

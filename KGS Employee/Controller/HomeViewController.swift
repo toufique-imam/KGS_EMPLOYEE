@@ -19,9 +19,14 @@ class HomeViewController: UIViewController {
     
     var timer = Timer()
     
+    @IBAction func goToGetStarted(_ sender : UIButton) {
+        let storyboard = UIStoryboard.init(name: "GetStarted", bundle: nil)
+        let getStartedvc = storyboard.instantiateViewController(withIdentifier: "GetStartedController") as! GetStartedController
+        self.navigationController?.pushViewController(getStartedvc, animated: true)
+    }
+    
+    
     @IBAction func goToSettings(_ sender: UIBarButtonItem) {
-        //TODO: go to settings controller
-        
         let storyboard = UIStoryboard.init(name: "Settings", bundle: nil)
         let settingsPagevc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         self.navigationController?.pushViewController(settingsPagevc, animated: true)
@@ -45,14 +50,7 @@ class HomeViewController: UIViewController {
         appHomeCollectionView.scrollDelegate = self
         initTime()
         initNavigationController()
-        guard let customFont = UIFont(name: "Poppins-SemiBold", size: 14) else {
-            fatalError("""
-                Failed to load the "Poppins-SemiBold" font.
-                Make sure the font file is included in the project and the font name is spelled correctly.
-                """
-            )
-        }
-        buttonGettingStarted.titleLabel?.font = UIFontMetrics.default.scaledFont(for: customFont)
+        buttonGettingStarted.loadFont(fontName: "Poppins-SemiBold")
         buttonGettingStarted.dropShadow(color: UIColor(named: "DropShadow")!, opacity: 0.3, offset: CGSize(width: 1, height: -1), radius: 30, scale: false)
         buttonGettingStarted.layer.cornerRadius = 20
     }

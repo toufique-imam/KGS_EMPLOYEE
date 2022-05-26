@@ -124,9 +124,7 @@ extension UIView {
     }
 }
 
-
 extension UIView{
-
     // For insert layer in background
     func addBlackGradientLayerInBackground(frame: CGRect, colors:[UIColor] , cornerRadius : CGFloat? = nil ){
         let gradient = CAGradientLayer()
@@ -139,5 +137,19 @@ extension UIView{
             gradient.cornerRadius = cornerRadius
         }
         layer.insertSublayer(gradient, at: 0)
+    }
+}
+
+extension UIButton {
+    func loadFont(fontName:String , size : CGFloat = 14){
+        if let customFont = UIFont(name: fontName, size: size) {
+            self.titleLabel?.font = UIFontMetrics.default.scaledFont(for: customFont)
+        } else {
+            print("""
+                Failed to load the "\(fontName)" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
     }
 }
