@@ -26,8 +26,9 @@ class GetStartedController : UIViewController {
         }else{
             print("no item found")
         }
-        loadSports()
-        //loadTeams()
+        //loadProjects()
+        //loadSports()
+        loadTeams()
     }
     func loadTeams(){
         let storyboard = UIStoryboard.init(name: "Team", bundle: nil)
@@ -48,5 +49,17 @@ class GetStartedController : UIViewController {
         //addChild(teamvc)
         addChild(teamvc)
         containerView.didMoveToWindow()
+    }
+    
+    func loadProjects(){
+        let storyboard = UIStoryboard.init(name: "Project", bundle: nil)
+        
+        let teamvc = storyboard.instantiateViewController(withIdentifier: "ProjectViewController") as! ProjectViewController
+        teamvc.view.frame = containerView.bounds
+        containerView.addSubview(teamvc.view)
+        //addChild(teamvc)
+        addChild(teamvc)
+        containerView.didMoveToWindow()
+        teamvc.initializeType(1);
     }
 }

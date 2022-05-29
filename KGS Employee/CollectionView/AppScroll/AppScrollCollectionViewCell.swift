@@ -20,6 +20,6 @@ class AppScrollCollectionViewCell: UICollectionViewCell {
     func loadCell(_ appInfo : AppInfo){
         imageLogo.image = UIImage(named: appInfo.iconPath)
         labelTitle.text = appInfo.name
-        labelDescription.text = appInfo.description
+        labelDescription.text = appInfo.subtitle
     }
 }

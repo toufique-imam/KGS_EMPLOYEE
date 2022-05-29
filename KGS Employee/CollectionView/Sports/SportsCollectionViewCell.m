@@ -15,7 +15,7 @@
     // Initialization code
 }
 
-- (void)loadCellnamed:(NSString*)imageName title:(NSString*)title{
+- (void)loadCellImageName:(NSString*)imageName title:(NSString*)title{
     self.imageView.image = [UIImage imageNamed:imageName];
     self.labelSports.text = title;
 }

@@ -13,14 +13,11 @@ class TeamCollectionView: UICollectionView {
     let sectionInsets = UIEdgeInsets(top: 16, left: 18, bottom: 16, right: 20)
     //load the team name
     //when selected send the data to delegate and change the button
-    var teamDataDelegate : TeamDataDelegate? = nil
+    weak var teamDataDelegate : TeamDataDelegate? = nil
     let cellId = "TeamCollectionViewCell"
     var selectedIndex : IndexPath? {
         didSet{
-            print("selectedIndex " , oldValue , selectedIndex)
-            if oldValue == selectedIndex {
-                return
-            }
+            //print("selectedIndex " , oldValue , selectedIndex)
             if let oldValue = oldValue,
                let cellOld = self.cellForItem(at: oldValue) as? TeamCollectionViewCell {
                 cellOld.toggleButton(selected: false)
@@ -87,6 +84,7 @@ extension TeamCollectionView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("called")
         self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        teamDataDelegate?.teamSelected(teamIndex: indexPath)
      //   selectedItem = indexPath
         selectedIndex = indexPath
     }

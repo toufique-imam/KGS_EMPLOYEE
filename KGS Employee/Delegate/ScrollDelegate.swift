@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol ScrollDelegate{
+protocol ScrollDelegate : AnyObject {
     func collectionViewScrollUpdate(_ scrollView: UIScrollView , _ ended : Bool)
 }

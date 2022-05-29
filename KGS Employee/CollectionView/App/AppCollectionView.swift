@@ -16,7 +16,7 @@ class AppCollectionView : UICollectionView {
     let itemsPerRow :CGFloat = 1
     let itemsPerCol :CGFloat = 1
     
-    var scrollDelegate : ScrollDelegate? = nil
+    weak var scrollDelegate : ScrollDelegate? = nil
     
     //register the nib cell
     override func awakeFromNib() {

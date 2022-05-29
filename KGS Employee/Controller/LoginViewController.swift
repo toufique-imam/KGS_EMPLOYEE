@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
     
     
     private func initGradientView(){
-        gradientViewTop.addBlackGradientLayerInBackground(frame: gradientViewTop.bounds, colors: [startColor , endColor])
+        gradientViewTop.addDiagonalGradientLayerInBackground(frame: gradientViewTop.bounds, colors: [startColor , endColor])
     }
     
     private func initViewForm(){
@@ -99,7 +99,7 @@ class LoginViewController: UIViewController {
     
     private func initLoginButton(){
         buttonLogin.dropShadowHalfRounded(color: .lightGray, opacity: 1, offset: CGSize(width: 1, height: -1), radius: 10, scale: false)
-        buttonLogin.addBlackGradientLayerInBackground(frame: buttonLogin.bounds, colors: [startColor , endColor] , cornerRadius: 0.5 * buttonLogin.bounds.size.width)
+        buttonLogin.addGradientLayerInBackground(frame: buttonLogin.bounds, colors: [startColor , endColor] , cornerRadius: 0.5 * buttonLogin.bounds.size.width)
 
         buttonLogin.layer.cornerRadius =  0.5 * buttonLogin.bounds.size.width
     }

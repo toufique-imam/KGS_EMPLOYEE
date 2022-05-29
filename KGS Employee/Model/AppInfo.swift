@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 
-class AppInfo {
-    var name = "placeholder name"
-    var description = "placeholder description"
-    var imagePath  = ""
-    var iconPath = ""
+@objc class AppInfo  : NSObject{
+    @objc var name = "placeholder name"
+    @objc var subtitle = "placeholder description"
+    @objc var imagePath  = ""
+    @objc var iconPath = ""
     
     var appType = AppType.fullInfo
     
@@ -32,7 +32,7 @@ class AppInfo {
          imagePath:String = "",
          iconPath:String=""){
         self.name = name
-        self.description = description
+        self.subtitle = description
         self.imagePath = imagePath
         self.iconPath = iconPath
     }

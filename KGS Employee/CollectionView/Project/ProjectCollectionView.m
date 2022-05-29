@@ -21,7 +21,7 @@ UICollectionViewDelegateFlowLayout
     [super awakeFromNib];
     self.cellId  = @"ProjectCollectionViewCell";
     self.itemsPerRow = 1;
-    self.sectionInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.sectionInsets = UIEdgeInsetsMake(8, 20, 8, 20);
     
     UINib* nibCell = [UINib nibWithNibName:self.cellId bundle:nil];
     
@@ -39,7 +39,11 @@ UICollectionViewDelegateFlowLayout
     ProjectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellId forIndexPath:indexPath];
     
     AppInfo* appInfo = [self.projectDelegate getDataFor:indexPath];
-    [cell loadCellAppInfo:appInfo];
+    if([self.projectDelegate getType]==1){
+        [cell loadCellVacation:appInfo color:[self.projectDelegate getColorFor:indexPath]];
+    }else{
+        [cell loadCellProject:appInfo];
+    }
     return cell;
 }
 

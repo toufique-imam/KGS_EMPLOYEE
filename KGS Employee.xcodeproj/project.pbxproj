@@ -60,6 +60,15 @@
 		BCAEC860283F9F730012108F /* SportsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC85F283F9F730012108F /* SportsCollectionView.m */; };
 		BCAEC864283FA0270012108F /* SportsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC862283FA0270012108F /* SportsCollectionViewCell.m */; };
 		BCAEC865283FA0270012108F /* SportsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAEC863283FA0270012108F /* SportsCollectionViewCell.xib */; };
+		BCAEFF2D28434060001D204B /* ProjectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAEFF2B28434060001D204B /* ProjectCollectionViewCell.m */; };
+		BCAEFF2E28434060001D204B /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAEFF2C28434060001D204B /* ProjectCollectionViewCell.xib */; };
+		BCAEFF3128434081001D204B /* ProjectCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAEFF3028434081001D204B /* ProjectCollectionView.m */; };
+		BCAEFF3328434972001D204B /* ProjectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEFF3228434972001D204B /* ProjectDelegate.swift */; };
+		BCAEFF35284353FA001D204B /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCAEFF34284353FA001D204B /* Project.storyboard */; };
+		BCAEFF3A28435A42001D204B /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAEFF3928435A42001D204B /* ProjectViewController.m */; };
+		BCAEFF3D284386F0001D204B /* TeamMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEFF3B284386F0001D204B /* TeamMemberCell.swift */; };
+		BCAEFF3E284386F0001D204B /* TeamMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAEFF3C284386F0001D204B /* TeamMemberCell.xib */; };
+		BCAEFF4028438704001D204B /* TeamMemberCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEFF3F28438704001D204B /* TeamMemberCollectionView.swift */; };
 		BCCBA207283DE4830061CE14 /* AppCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE196B0283D18090041B188 /* AppCollectionView.swift */; };
 		BCCBA208283DE4860061CE14 /* AppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE196B1283D18090041B188 /* AppCollectionViewCell.xib */; };
 		BCCBA209283DE4880061CE14 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE196B2283D18090041B188 /* AppCollectionViewCell.swift */; };
@@ -131,6 +140,18 @@
 		BCAEC861283FA0270012108F /* SportsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsCollectionViewCell.h; sourceTree = "<group>"; };
 		BCAEC862283FA0270012108F /* SportsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsCollectionViewCell.m; sourceTree = "<group>"; };
 		BCAEC863283FA0270012108F /* SportsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsCollectionViewCell.xib; sourceTree = "<group>"; };
+		BCAEFF2A28434060001D204B /* ProjectCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectCollectionViewCell.h; sourceTree = "<group>"; };
+		BCAEFF2B28434060001D204B /* ProjectCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectCollectionViewCell.m; sourceTree = "<group>"; };
+		BCAEFF2C28434060001D204B /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
+		BCAEFF2F28434081001D204B /* ProjectCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectCollectionView.h; sourceTree = "<group>"; };
+		BCAEFF3028434081001D204B /* ProjectCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectCollectionView.m; sourceTree = "<group>"; };
+		BCAEFF3228434972001D204B /* ProjectDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDelegate.swift; sourceTree = "<group>"; };
+		BCAEFF34284353FA001D204B /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
+		BCAEFF3828435A42001D204B /* ProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
+		BCAEFF3928435A42001D204B /* ProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
+		BCAEFF3B284386F0001D204B /* TeamMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberCell.swift; sourceTree = "<group>"; };
+		BCAEFF3C284386F0001D204B /* TeamMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamMemberCell.xib; sourceTree = "<group>"; };
+		BCAEFF3F28438704001D204B /* TeamMemberCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberCollectionView.swift; sourceTree = "<group>"; };
 		BCDA87912836457300B6EA22 /* KGS Employee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KGS Employee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA87942836457300B6EA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCDA87962836457300B6EA22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +259,8 @@
 				BCAEC842283F74910012108F /* GetStartedController.swift */,
 				BCAEC854283F87A30012108F /* TeamViewController.swift */,
 				BCAEC856283F9D780012108F /* SportsViewController.swift */,
+				BCAEFF3828435A42001D204B /* ProjectViewController.h */,
+				BCAEFF3928435A42001D204B /* ProjectViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,7 +268,7 @@
 		BCAEC847283F7BD70012108F /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				BCAEC84A283F7C290012108F /* Projects */,
+				BCAEC84A283F7C290012108F /* Project */,
 				BCAEC849283F7C230012108F /* Sports */,
 				BCAEC848283F7C0E0012108F /* Team */,
 				BCAEC851283F7F340012108F /* TeamMember */,
@@ -280,16 +303,24 @@
 			path = Sports;
 			sourceTree = "<group>";
 		};
-		BCAEC84A283F7C290012108F /* Projects */ = {
+		BCAEC84A283F7C290012108F /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				BCAEFF2F28434081001D204B /* ProjectCollectionView.h */,
+				BCAEFF3028434081001D204B /* ProjectCollectionView.m */,
+				BCAEFF2A28434060001D204B /* ProjectCollectionViewCell.h */,
+				BCAEFF2B28434060001D204B /* ProjectCollectionViewCell.m */,
+				BCAEFF2C28434060001D204B /* ProjectCollectionViewCell.xib */,
 			);
-			path = Projects;
+			path = Project;
 			sourceTree = "<group>";
 		};
 		BCAEC851283F7F340012108F /* TeamMember */ = {
 			isa = PBXGroup;
 			children = (
+				BCAEFF3B284386F0001D204B /* TeamMemberCell.swift */,
+				BCAEFF3C284386F0001D204B /* TeamMemberCell.xib */,
+				BCAEFF3F28438704001D204B /* TeamMemberCollectionView.swift */,
 			);
 			path = TeamMember;
 			sourceTree = "<group>";
@@ -339,6 +370,7 @@
 				BCAEC840283F5EDD0012108F /* GetStarted.storyboard */,
 				BCAEC845283F7BC90012108F /* Team.storyboard */,
 				BCAEC858283F9DAC0012108F /* Sports.storyboard */,
+				BCAEFF34284353FA001D204B /* Project.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -347,8 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				BCE196B0283D18090041B188 /* AppCollectionView.swift */,
-				BCE196B1283D18090041B188 /* AppCollectionViewCell.xib */,
 				BCE196B2283D18090041B188 /* AppCollectionViewCell.swift */,
+				BCE196B1283D18090041B188 /* AppCollectionViewCell.xib */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -358,6 +390,7 @@
 			children = (
 				BC72DBB9283DFC920027B60C /* ScrollDelegate.swift */,
 				BCAEC852283F84040012108F /* TeamDataDelegate.swift */,
+				BCAEFF3228434972001D204B /* ProjectDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -423,6 +456,7 @@
 			files = (
 				BCAEC865283FA0270012108F /* SportsCollectionViewCell.xib in Resources */,
 				BC72DBA9283DF41C0027B60C /* Poppins-BoldItalic.ttf in Resources */,
+				BCAEFF3E284386F0001D204B /* TeamMemberCell.xib in Resources */,
 				BC72DBCD283E25F00027B60C /* SFPRODISPLAY-MEDIUM.OTF in Resources */,
 				BC72DBB8283DF41C0027B60C /* Poppins-MediumItalic.ttf in Resources */,
 				BC72DBAA283DF41C0027B60C /* Poppins-Light.ttf in Resources */,
@@ -435,7 +469,9 @@
 				BC72DBB4283DF41C0027B60C /* Poppins-Black.ttf in Resources */,
 				BC72DBB7283DF41C0027B60C /* Poppins-Italic.ttf in Resources */,
 				BC72DBA6283DF41C0027B60C /* Poppins-ExtraLight.ttf in Resources */,
+				BCAEFF2E28434060001D204B /* ProjectCollectionViewCell.xib in Resources */,
 				BC72DBB1283DF41C0027B60C /* Poppins-Regular.ttf in Resources */,
+				BCAEFF35284353FA001D204B /* Project.storyboard in Resources */,
 				BC72DBB3283DF41C0027B60C /* Poppins-Bold.ttf in Resources */,
 				BC72DBAD283DF41C0027B60C /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				BC72DBB2283DF41C0027B60C /* Poppins-LightItalic.ttf in Resources */,
@@ -475,20 +511,26 @@
 				BCDA87952836457300B6EA22 /* AppDelegate.swift in Sources */,
 				BCAEC853283F84040012108F /* TeamDataDelegate.swift in Sources */,
 				BCAEC84C283F7C470012108F /* TeamCollectionView.swift in Sources */,
+				BCAEFF4028438704001D204B /* TeamMemberCollectionView.swift in Sources */,
+				BCAEFF3328434972001D204B /* ProjectDelegate.swift in Sources */,
+				BCAEFF3A28435A42001D204B /* ProjectViewController.m in Sources */,
 				BC72DBDE283E51B40027B60C /* AppScrollCollectionViewCell.swift in Sources */,
 				BC7E3E5B283CE0CE00C17A36 /* User.swift in Sources */,
 				BCCBA209283DE4880061CE14 /* AppCollectionViewCell.swift in Sources */,
 				BCDA87972836457300B6EA22 /* SceneDelegate.swift in Sources */,
 				BCAEC844283F768B0012108F /* GetStartedController.swift in Sources */,
+				BCAEFF3128434081001D204B /* ProjectCollectionView.m in Sources */,
 				BC72DBD3283E2B930027B60C /* SettingsHeaderView.swift in Sources */,
 				BC72DBBA283DFC920027B60C /* ScrollDelegate.swift in Sources */,
 				BCAEC855283F87A30012108F /* TeamViewController.swift in Sources */,
 				BCAEC864283FA0270012108F /* SportsCollectionViewCell.m in Sources */,
 				BCCBA207283DE4830061CE14 /* AppCollectionView.swift in Sources */,
+				BCAEFF2D28434060001D204B /* ProjectCollectionViewCell.m in Sources */,
 				BCE196B5283D18A00041B188 /* StaticData.swift in Sources */,
 				BCAEC860283F9F730012108F /* SportsCollectionView.m in Sources */,
 				BCAEC84F283F7C5A0012108F /* TeamCollectionViewCell.swift in Sources */,
 				BC72DBD9283E518C0027B60C /* AppSlideCollectionViewCell.swift in Sources */,
+				BCAEFF3D284386F0001D204B /* TeamMemberCell.swift in Sources */,
 				BCE196AD283CF8810041B188 /* HomeViewController.swift in Sources */,
 				BC72DBE1283E51CE0027B60C /* AppScrollCollectionView.swift in Sources */,
 				BC72DBD0283E26C50027B60C /* SettingsCollectionViewCell.swift in Sources */,

@@ -9,9 +9,23 @@ import UIKit
 
 class TeamMemberCell: UICollectionViewCell {
 
+    @IBOutlet weak var imageView : UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    func loadCell(user: User){
+        imageView.image = UIImage.init(named: user.imagePath)
+        imageView.layer.cornerRadius = 10
+    }
+    func updateCellState(isSelected:Bool){
+        if(isSelected){
+            imageView.layer.borderColor = UIColor.darkGray.cgColor
+            imageView.layer.borderWidth = 2;
+        }else{
+            imageView.layer.borderWidth = 0;
+            imageView.layer.borderColor = UIColor.clear.cgColor
+        }
     }
 
 }

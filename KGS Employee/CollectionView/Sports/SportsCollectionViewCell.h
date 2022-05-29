@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *labelSports;
 
 
-- (void)loadCellnamed:(NSString*)imageName title:(NSString*)title;
+- (void)loadCellImageName:(NSString*)imageName title:(NSString*)title;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -26,20 +26,44 @@
                 <rect key="frame" x="0.0" y="0.0" width="542" height="111"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Xcode_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="k54-4D-hLE">
-                        <rect key="frame" x="12" y="12" width="60" height="87"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXs-Qq-NqW">
+                        <rect key="frame" x="10" y="17" width="77.5" height="77"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooq-pL-5R4">
+                                <rect key="frame" x="21.5" y="0.0" width="34.5" height="49.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="28"/>
+                                <color key="textColor" name="AppsBackground"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inj-Sd-Cqg">
+                                <rect key="frame" x="26" y="27" width="25" height="50"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="AppsBackground"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="eXs-Qq-NqW" secondAttribute="height" multiplier="1:1" id="lwL-Px-wKr"/>
+                        </constraints>
+                    </stackView>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Xcode_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="k54-4D-hLE">
+                        <rect key="frame" x="12" y="17" width="77.5" height="77"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="k54-4D-hLE" secondAttribute="height" multiplier="1:1" id="Dhg-RR-HCz"/>
+                        </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="YFb-le-RzU">
-                        <rect key="frame" x="92" y="10" width="430" height="91"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="YFb-le-RzU">
+                        <rect key="frame" x="109.5" y="26" width="432.5" height="59"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write on Photos : Add Text!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvc-UW-xlq">
-                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                 <color key="textColor" name="TitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver :2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtJ-gB-GmM">
-                                <rect key="frame" x="0.0" y="51" width="46.5" height="40"/>
+                                <rect key="frame" x="0.0" y="32.5" width="46.5" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                 <color key="textColor" red="0.35294117647058826" green="0.35686274509803922" blue="0.42745098039215684" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,29 +73,35 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
-            <color key="backgroundColor" name="LogOut"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="k54-4D-hLE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="0pF-GK-5b0"/>
-                <constraint firstItem="YFb-le-RzU" firstAttribute="leading" secondItem="k54-4D-hLE" secondAttribute="trailing" constant="20" id="2aX-hr-TfU"/>
-                <constraint firstItem="k54-4D-hLE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="FCw-Of-CnY"/>
-                <constraint firstAttribute="bottom" secondItem="k54-4D-hLE" secondAttribute="bottom" constant="12" id="PzD-1l-kdW"/>
-                <constraint firstAttribute="bottom" secondItem="YFb-le-RzU" secondAttribute="bottom" constant="10" id="TNy-PB-GfU"/>
-                <constraint firstItem="YFb-le-RzU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="bU5-kd-1EH"/>
-                <constraint firstAttribute="trailing" secondItem="YFb-le-RzU" secondAttribute="trailing" constant="20" id="yRX-TE-r8p"/>
+                <constraint firstItem="eXs-Qq-NqW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="BXp-FD-Dlm"/>
+                <constraint firstItem="k54-4D-hLE" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="60:86" id="CmU-bB-6Fh"/>
+                <constraint firstItem="eXs-Qq-NqW" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Woz-o5-Gj0"/>
+                <constraint firstItem="eXs-Qq-NqW" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="60:86" id="a83-o6-Wav"/>
+                <constraint firstItem="YFb-le-RzU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="hxw-Oq-peO"/>
+                <constraint firstAttribute="trailing" secondItem="YFb-le-RzU" secondAttribute="trailing" id="i14-Vn-tGk"/>
+                <constraint firstItem="YFb-le-RzU" firstAttribute="leading" secondItem="k54-4D-hLE" secondAttribute="trailing" constant="20" id="mMd-ZA-ydL"/>
+                <constraint firstItem="YFb-le-RzU" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="45:84" id="nvU-Be-aNf"/>
+                <constraint firstItem="k54-4D-hLE" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ssf-Zc-90H"/>
+                <constraint firstItem="k54-4D-hLE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="w3S-mZ-Nys"/>
             </constraints>
             <size key="customSize" width="542" height="111"/>
             <connections>
                 <outlet property="imageIcon" destination="k54-4D-hLE" id="pyz-W7-Zg9"/>
+                <outlet property="labelDate" destination="ooq-pL-5R4" id="qgD-t5-tsx"/>
                 <outlet property="labelDescription" destination="dtJ-gB-GmM" id="bqD-zV-b1l"/>
+                <outlet property="labelMonth" destination="Inj-Sd-Cqg" id="Kw2-5z-R4M"/>
                 <outlet property="labelTitle" destination="Vvc-UW-xlq" id="WmE-cn-uJG"/>
+                <outlet property="stackViewVacation" destination="eXs-Qq-NqW" id="H9j-Yk-UDD"/>
             </connections>
             <point key="canvasLocation" x="207.24637681159422" y="82.03125"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="Xcode_Icon" width="60" height="60"/>
-        <namedColor name="LogOut">
-            <color red="0.85098039215686272" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AppsBackground">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TitleColor">
             <color red="0.35294117647058826" green="0.35686274509803922" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

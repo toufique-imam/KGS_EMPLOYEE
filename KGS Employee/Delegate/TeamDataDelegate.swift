@@ -8,10 +8,10 @@
 import Foundation
 
 
-protocol TeamDataDelegate {
+protocol TeamDataDelegate : AnyObject {
     func getCount()->Int
     func getCount(for indexPath: IndexPath) -> Int
-    func teamSelected(teamName:String)
+    func teamSelected(teamIndex : IndexPath)
     func employeeSelected(employee user: User)
     func getTeamName(for indexPath: IndexPath)->String
     func getEmployee(for indexPath : IndexPath)->User

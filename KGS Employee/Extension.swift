@@ -66,7 +66,7 @@ extension UIView {
         return cgPath
     }
     
-
+    
     func dropShadowPath(_ bounds: CGPath, color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
         layer.masksToBounds = false
         layer.shadowColor = color.cgColor
@@ -78,7 +78,7 @@ extension UIView {
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
-    func dropShadow(color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
+    @objc func dropShadow(color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
         let path = UIBezierPath(rect: self.bounds).cgPath
         dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
     }
@@ -87,7 +87,7 @@ extension UIView {
         
         let path = UIBezierPath(arcCenter: CGPoint(x: layer.bounds.width / 2, y: layer.bounds.height / 2), radius: layer.frame.width / 2 , startAngle: 0.14, endAngle: 3.0, clockwise: true).cgPath
         dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
-   }
+    }
     func dropShadowRounded(color : UIColor , opacity : Float = 0.5 , offset : CGSize , radius : CGFloat = 1 , scale : Bool = true){
         let path = UIBezierPath.init(ovalIn: self.bounds).cgPath
         dropShadowPath(path, color: color, opacity: opacity, offset: offset, radius: radius, scale: scale)
@@ -124,22 +124,39 @@ extension UIView {
     }
 }
 
+//MARK: UIView gradient
 extension UIView{
     // For insert layer in background
-    func addBlackGradientLayerInBackground(frame: CGRect, colors:[UIColor] , cornerRadius : CGFloat? = nil ){
+    func addDiagonalGradientLayerInBackground(frame: CGRect, colors:[UIColor] , cornerRadius : CGFloat? = nil , startPoint: CGPoint = CGPoint.zero, endPoint: CGPoint = CGPoint(x: 1.0, y: 1.0) ){
+        
         let gradient = CAGradientLayer()
         gradient.frame = frame
         gradient.colors = colors.map{$0.cgColor}
-        gradient.startPoint  = CGPoint.zero
+        gradient.startPoint  = startPoint
         gradient.masksToBounds = true
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.endPoint = endPoint
         if let cornerRadius = cornerRadius {
             gradient.cornerRadius = cornerRadius
         }
         layer.insertSublayer(gradient, at: 0)
     }
+    
+    func addGradientLayerInBackground(frame: CGRect, colors:[UIColor] , cornerRadius : CGFloat? = nil  , locations:[NSNumber] = [0.0 , 1.0]){
+        
+        let gradient = CAGradientLayer()
+        gradient.frame = frame
+        gradient.colors = colors.map{$0.cgColor}
+        gradient.masksToBounds = true
+        gradient.locations = locations
+        if let cornerRadius = cornerRadius {
+            gradient.cornerRadius = cornerRadius
+        }
+        layer.insertSublayer(gradient, at: 0)
+    }
+    
 }
 
+//MARK: UIButton titleLabel Custom Font
 extension UIButton {
     func loadFont(fontName:String , size : CGFloat = 14){
         if let customFont = UIFont(name: fontName, size: size) {
@@ -151,5 +168,44 @@ extension UIButton {
                 """
             )
         }
+    }
+}
+//MARK: UIColor from hex
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    @objc static func colorFromHexCode(colorCode:Int)->UIColor{
+        return UIColor(colorCode: colorCode);
+    }
+    
+    convenience init(colorCode rgb: Int) {
+        self.init(
+            red: (rgb >> 16) & 0xFF,
+            green: (rgb >> 8) & 0xFF,
+            blue: rgb & 0xFF
+        )
+    }
+    convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0) {
+        self.init(
+            red: CGFloat(red) / 255.0,
+            green: CGFloat(green) / 255.0,
+            blue: CGFloat(blue) / 255.0,
+            alpha: a
+        )
+    }
+    
+    convenience init(colorCode rgb: Int, alpha a: CGFloat = 1.0) {
+        self.init(
+            red: (rgb >> 16) & 0xFF,
+            green: (rgb >> 8) & 0xFF,
+            blue: rgb & 0xFF,
+            a: a
+        )
     }
 }

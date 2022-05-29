@@ -6,26 +6,56 @@
 //
 
 #import "ProjectViewController.h"
+#import "ProjectCollectionView.h"
+#import "KGS_Employee-Swift.h"
 
-@interface ProjectViewController ()
-
+@interface ProjectViewController ()<
+ProjectDelegate
+>
 @end
 
 @implementation ProjectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.projectType = 0;
     // Do any additional setup after loading the view.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)initializeType:(int) type{
+    self.projectType = type;
+    self.projectCollectionView.projectDelegate = self;
+    [self.projectCollectionView initialize];
+    //[self.projectCollectionView reloadData];
 }
-*/
+
+
+
+
+- (NSInteger)getCount {
+    if(self.projectType==0){
+        return 20;
+    }else{
+        return StaticData.holidayData.count;
+    }
+}
+
+- (AppInfo * _Nonnull)getDataFor:(NSIndexPath * _Nonnull)indexPath {
+    if(self.projectType==0){
+        return StaticData.projectData[0];
+    }else{
+        return StaticData.holidayData[indexPath.row];
+    }
+}
+
+- (UIColor* _Nonnull)getColorFor:(NSIndexPath * _Nonnull)indexPath {
+    int colorCode = [StaticData.holidayColors[indexPath.row] intValue];
+    return [UIColor colorFromHexCodeWithColorCode:colorCode];
+}
+
+
+- (NSInteger)getType {
+    return self.projectType;
+}
+
 
 @end

@@ -11,14 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-
 @interface SportsCollectionView : UICollectionView
 
 @property UIEdgeInsets sectionInsets;
 @property NSString *cellId;
-@property NSArray *imageData;
-@property NSArray *descriptionData;
 @property int itemPerRow;
+
+-(void) initialize;
 
 @end
 

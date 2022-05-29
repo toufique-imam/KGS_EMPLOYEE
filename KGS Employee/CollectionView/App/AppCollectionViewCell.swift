@@ -20,11 +20,10 @@ class AppCollectionViewCell: UICollectionViewCell {
     }
     
     func loadCell(appInfo : AppInfo){
-        //TODO: load the cell here
         imageViewLogo.image = UIImage(named: appInfo.iconPath)
         imageViewLogo.layer.cornerRadius = 5
         labelTitle.text = appInfo.name
-        labelDescription.text = appInfo.description
+        labelDescription.text = appInfo.subtitle
         imageViewLarge.image = UIImage(named: appInfo.imagePath)
         imageViewLarge.layer.cornerRadius = 10
     }
