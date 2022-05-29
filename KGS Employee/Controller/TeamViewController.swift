@@ -17,15 +17,14 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var stackViewMemberHeader : UIStackView!
     @IBOutlet weak var mainView: UIView!
     let indexZero = IndexPath(row: 0, section: 0)
-    let colorStart = UIColor.white , colorMid = UIColor.red , colorEnd = UIColor.darkText;
+    let colorStart = UIColor.white , colorMid = UIColor.darkText
     @IBOutlet weak var gradientView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gradientView.addGradientLayerInBackground(frame: gradientView.bounds, colors: [colorStart , colorMid , colorEnd])
-
-  
-        gradientView.alpha = 0.6
+        gradientView.addGradientLayerInBackground(frame: gradientView.bounds, colors: [colorStart , colorMid])
+        gradientView.alpha = 0.3
+        gradientView.dropShadow(color: UIColor.red, opacity: 0.5, offset: CGSize(width: 1, height: 1), radius: 10, scale: false)
         mainView.layer.cornerRadius = 10
         mainView.clipsToBounds = true
         
@@ -34,6 +33,7 @@ class TeamViewController: UIViewController {
         teamCollectionView.selectedIndex = indexZero
         teamMemberCollectionView.columnIndex = indexZero
         teamMemberCollectionView.selectedIndex = indexZero
+        employeeSelected(employee: StaticData.employees[0][0])
         teamMemberCollectionView.initialize()
         teamCollectionView.initialize()
     }
@@ -53,6 +53,7 @@ extension TeamViewController : TeamDataDelegate {
         teamMemberCollectionView.columnIndex = teamIndex
         teamMemberCollectionView.selectedIndex = indexZero
         teamMemberCollectionView.reloadData()
+        employeeSelected(employee: StaticData.employees[teamIndex.row][0])
     }
     
     func employeeSelected(employee user: User) {

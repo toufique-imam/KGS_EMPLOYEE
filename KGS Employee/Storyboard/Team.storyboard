@@ -41,8 +41,11 @@
                                                 <color key="backgroundColor" name="LogOut"/>
                                             </imageView>
                                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-Zx-H5E">
-                                                <rect key="frame" x="0.0" y="538.5" width="364" height="61.5"/>
+                                                <rect key="frame" x="0.0" y="491" width="364" height="109"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ydz-Zx-H5E" secondAttribute="height" multiplier="323:97" id="d4v-dV-R7z"/>
+                                                </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v9L-Xx-p8d">
                                                 <rect key="frame" x="0.0" y="538.5" width="364" height="61.5"/>
@@ -69,10 +72,9 @@
                                             <constraint firstAttribute="bottom" secondItem="v9L-Xx-p8d" secondAttribute="bottom" id="8ZY-4S-VuU"/>
                                             <constraint firstAttribute="trailing" secondItem="wCb-NB-uPJ" secondAttribute="trailing" id="9ku-yv-926"/>
                                             <constraint firstAttribute="trailing" secondItem="ydz-Zx-H5E" secondAttribute="trailing" id="Ded-ee-mEG"/>
-                                            <constraint firstItem="ydz-Zx-H5E" firstAttribute="top" secondItem="v9L-Xx-p8d" secondAttribute="top" id="LeI-0y-mFt"/>
+                                            <constraint firstAttribute="bottom" secondItem="ydz-Zx-H5E" secondAttribute="bottom" id="K6Q-ap-Cqd"/>
                                             <constraint firstAttribute="trailing" secondItem="v9L-Xx-p8d" secondAttribute="trailing" id="ZXa-Q4-DCj"/>
                                             <constraint firstAttribute="bottom" secondItem="wCb-NB-uPJ" secondAttribute="bottom" id="aGR-PI-6uE"/>
-                                            <constraint firstItem="ydz-Zx-H5E" firstAttribute="height" secondItem="v9L-Xx-p8d" secondAttribute="height" id="c4D-3t-1I2"/>
                                             <constraint firstItem="ydz-Zx-H5E" firstAttribute="leading" secondItem="AO1-Vv-1dD" secondAttribute="leading" id="e2M-yZ-t7i"/>
                                             <constraint firstItem="v9L-Xx-p8d" firstAttribute="leading" secondItem="AO1-Vv-1dD" secondAttribute="leading" id="eea-lY-XjK"/>
                                             <constraint firstItem="wCb-NB-uPJ" firstAttribute="top" secondItem="AO1-Vv-1dD" secondAttribute="top" id="imZ-BG-s5X"/>
