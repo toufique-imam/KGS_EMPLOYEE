@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UG5-sF-75q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="726"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="725.5"/>
                             </containerView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aba-PE-WFs">
-                                <rect key="frame" x="0.0" y="770" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="769.5" width="414" height="92.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aba-PE-WFs" secondAttribute="height" multiplier="375:84" id="AFq-Td-RKE"/>
@@ -47,9 +47,20 @@
                             <constraint firstItem="aba-PE-WFs" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="xuh-97-rmm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7My-8Y-ejL">
+                        <barButtonItem key="leftBarButtonItem" title="back" image="back" landscapeImage="back" id="m05-QE-Jdh">
+                            <connections>
+                                <action selector="goBack:" destination="Y6W-OH-hqX" id="O46-ze-6xQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomTabBar" destination="aba-PE-WFs" id="X43-Ds-SYL"/>
                         <outlet property="containerView" destination="UG5-sF-75q" id="LsS-gQ-4yY"/>
+                        <outlet property="holidayTabBarItem" destination="m8I-QE-zvS" id="yEU-Cn-4Th"/>
+                        <outlet property="projectsTabBarItem" destination="WiS-8y-AiM" id="0qX-Wv-NSL"/>
+                        <outlet property="sportsTabBarItem" destination="OII-Jx-woU" id="6V9-RW-Djp"/>
+                        <outlet property="teamsTabBarItem" destination="9uR-El-sSl" id="gAC-5w-yMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,6 +69,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="46" height="46"/>
         <image name="icon_holidays" width="24" height="23"/>
         <image name="icon_projects" width="25" height="27.5"/>
         <image name="icon_sports" width="25" height="25"/>

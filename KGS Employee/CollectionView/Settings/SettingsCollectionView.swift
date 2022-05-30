@@ -12,6 +12,7 @@ class SettingsCollectionView: UICollectionView {
     let cellId = "SettingsCollectionViewCell"
     let headerId = "SettingsHeader"
     let itemsPerRow : CGFloat = 1
+    weak var touchDownDelegate : TouchDownDelegate? = nil
     let sectionInsets = UIEdgeInsets(
         top: 0, left: 20, bottom: 0, right: 20)
     
@@ -88,6 +89,13 @@ extension SettingsCollectionView : UICollectionViewDataSource {
         cell.dropShadowPath(cell.getPath(for: arr), color: UIColor(named: "DropShadow")!, opacity: 0.8, offset: CGSize(width: 1, height: 3), radius: 20, scale: false)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(indexPath.section == 1) {
+            touchDownDelegate?.touchDown(indexPath: indexPath)
+        }
+        
     }
 }
 

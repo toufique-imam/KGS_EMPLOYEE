@@ -90,7 +90,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="GetStartedBackground"/>
                         <constraints>
                             <constraint firstItem="jCM-Yd-YbY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="6Xr-fq-d81"/>
                             <constraint firstItem="tVM-jg-bNk" firstAttribute="top" secondItem="jCM-Yd-YbY" secondAttribute="bottom" constant="10" id="CL0-gF-lMb"/>
@@ -114,6 +114,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="GetStartedBackground">
+            <color red="0.95686274509803926" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TitleColor">
             <color red="0.35294117647058826" green="0.35686274509803922" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -27,10 +27,38 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        settingsCollectionView.touchDownDelegate = self
         settingsCollectionView.initialize()
     }
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
+    func goToLogin() {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let loginvc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//        self.navigationController?.pushViewController(loginvc, animated: true)
+        self.navigationController?.setViewControllers([loginvc], animated: true)
+    }
+    func goToUserDetails() {
+        let storyboard = UIStoryboard.init(name: "UserDetail", bundle: nil)
+        let userDetailPagevc = storyboard.instantiateViewController(withIdentifier: "UserDetailController") as! UserDetailController
+        self.navigationController?.pushViewController(userDetailPagevc, animated: true)
+    }
+    
+}
+
+extension SettingsViewController : TouchDownDelegate {
+    func touchDown(indexPath: IndexPath) {
+        if(indexPath.row==0){
+            goToUserDetails()
+        }else {
+            CurrentUser.shared.logout()
+            goToLogin()
+        }
+    }
+    
+    func updateText(for header: String, value: String) {
+        
+    }
 }

@@ -10,11 +10,20 @@ import UIKit
 class SportsViewController: UIViewController {
     
     @IBOutlet weak var sportsCollectionView: SportsCollectionView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
+    var initialized = false;
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        if(initialized==false){
+//            sportsCollectionView.initialize()
+//            initialized = true
+//        }
+//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         sportsCollectionView.initialize()
+        print("sports view " , self.view.bounds , self.view.frame.width)
+        print("collection view ")
+        print(sportsCollectionView.layer.frame)
+        print(sportsCollectionView.layer.bounds)
     }
 }

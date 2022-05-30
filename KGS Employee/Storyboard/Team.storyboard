@@ -29,20 +29,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQo-Tw-hUH">
                                 <rect key="frame" x="0.0" y="44" width="414" height="650"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sifat" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-CX-vKb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sifat" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-CX-vKb">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
                                         <color key="backgroundColor" name="LogOut"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AO1-Vv-1dD" userLabel="mainview">
                                         <rect key="frame" x="25" y="25" width="364" height="600"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="wCb-NB-uPJ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="wCb-NB-uPJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="600"/>
                                                 <color key="backgroundColor" name="LogOut"/>
                                             </imageView>
                                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-Zx-H5E">
                                                 <rect key="frame" x="0.0" y="491" width="364" height="109"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ydz-Zx-H5E" secondAttribute="height" multiplier="323:97" id="d4v-dV-R7z"/>
                                                 </constraints>
@@ -109,7 +108,7 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s7C-CD-cB6" customClass="TeamCollectionView" customModule="KGS_Employee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="796" width="414" height="66"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="GetStartedBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="s7C-CD-cB6" secondAttribute="width" multiplier="60:375" id="yW8-bg-8Pp"/>
                                 </constraints>
@@ -160,14 +159,14 @@
         <namedColor name="AppsBackground">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="GetStartedBackground">
+            <color red="0.95686274509803926" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="LogOut">
             <color red="0.85098039215686272" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

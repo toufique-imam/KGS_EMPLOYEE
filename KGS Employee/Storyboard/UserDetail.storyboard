@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Detail Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController restorationIdentifier="UserDetailController" storyboardIdentifier="UserDetailController" id="Y6W-OH-hqX" customClass="UserDetailController" customModule="KGS_Employee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB6-UM-emt" userLabel="imagecontainer">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="336.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="qKi-Tb-oj3">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="336.5"/>
+                                        <color key="backgroundColor" name="LogOut"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="TyH-IZ-dUF">
+                                        <rect key="frame" x="142" y="103" width="130" height="130.5"/>
+                                        <color key="backgroundColor" red="0.32941177490000001" green="0.63921570780000003" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TyH-IZ-dUF" secondAttribute="height" id="bxo-vm-dMZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeQ-hj-e0Z">
+                                        <rect key="frame" x="248" y="144.5" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JeQ-hj-e0Z" secondAttribute="height" id="ru3-12-Fxk"/>
+                                            <constraint firstAttribute="width" constant="48" id="xco-05-gWE"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="edit_photo"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="edit_photo"/>
+                                        <connections>
+                                            <action selector="updateImage" destination="Y6W-OH-hqX" eventType="touchDown" id="wVT-lP-glA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MB6-UM-emt" secondAttribute="height" multiplier="375:305" id="44B-Bh-zYI"/>
+                                    <constraint firstItem="qKi-Tb-oj3" firstAttribute="leading" secondItem="MB6-UM-emt" secondAttribute="leading" id="53e-2l-6Sy"/>
+                                    <constraint firstItem="JeQ-hj-e0Z" firstAttribute="centerY" secondItem="MB6-UM-emt" secondAttribute="centerY" id="LUV-ps-Icy"/>
+                                    <constraint firstAttribute="bottom" secondItem="qKi-Tb-oj3" secondAttribute="bottom" id="UE4-DP-6AR"/>
+                                    <constraint firstItem="TyH-IZ-dUF" firstAttribute="height" secondItem="MB6-UM-emt" secondAttribute="height" multiplier="118:305" id="cIc-nh-MKo"/>
+                                    <constraint firstItem="TyH-IZ-dUF" firstAttribute="centerY" secondItem="MB6-UM-emt" secondAttribute="centerY" id="dEj-Vf-xfd"/>
+                                    <constraint firstItem="JeQ-hj-e0Z" firstAttribute="leading" secondItem="TyH-IZ-dUF" secondAttribute="trailing" constant="-24" id="dy6-YX-t1K"/>
+                                    <constraint firstItem="qKi-Tb-oj3" firstAttribute="top" secondItem="MB6-UM-emt" secondAttribute="top" id="jV4-ib-Q6s"/>
+                                    <constraint firstAttribute="trailing" secondItem="qKi-Tb-oj3" secondAttribute="trailing" id="qrh-od-Urh"/>
+                                    <constraint firstItem="TyH-IZ-dUF" firstAttribute="centerX" secondItem="MB6-UM-emt" secondAttribute="centerX" id="tMY-u4-M4p"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eho-Nw-uxQ" userLabel="dummyview">
+                                <rect key="frame" x="0.0" y="331.5" width="414" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="uGy-oD-nme"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="57i-3D-MSg" customClass="UserDetailCollectionView" customModule="KGS_Employee" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="351.5" width="414" height="510.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2QE-RH-LgG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GyM-OZ-ud0"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="MB6-UM-emt" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="2eg-EN-Dwr"/>
+                            <constraint firstItem="GyM-OZ-ud0" firstAttribute="trailing" secondItem="57i-3D-MSg" secondAttribute="trailing" id="4J8-Cz-z7a"/>
+                            <constraint firstAttribute="trailing" secondItem="Eho-Nw-uxQ" secondAttribute="trailing" id="8WX-Yg-X3N"/>
+                            <constraint firstAttribute="trailing" secondItem="MB6-UM-emt" secondAttribute="trailing" id="A2u-RN-CIx"/>
+                            <constraint firstItem="57i-3D-MSg" firstAttribute="top" secondItem="Eho-Nw-uxQ" secondAttribute="bottom" id="Qix-Pe-HtS"/>
+                            <constraint firstItem="Eho-Nw-uxQ" firstAttribute="top" secondItem="MB6-UM-emt" secondAttribute="bottom" constant="-5" id="Zm0-57-0hk"/>
+                            <constraint firstItem="57i-3D-MSg" firstAttribute="leading" secondItem="GyM-OZ-ud0" secondAttribute="leading" id="cvT-yY-wtG"/>
+                            <constraint firstItem="Eho-Nw-uxQ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="ezm-4O-CgT"/>
+                            <constraint firstItem="MB6-UM-emt" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="pzn-Fg-0ij"/>
+                            <constraint firstItem="GyM-OZ-ud0" firstAttribute="bottom" secondItem="57i-3D-MSg" secondAttribute="bottom" id="zBP-Cj-b6n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qQS-Kb-abc">
+                        <barButtonItem key="leftBarButtonItem" title="back" image="back" landscapeImage="back" id="Nj1-Hc-D4h">
+                            <connections>
+                                <action selector="goBack:" destination="Y6W-OH-hqX" id="Oiq-SZ-pa2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dummyView" destination="Eho-Nw-uxQ" id="iOM-pc-Jyh"/>
+                        <outlet property="imageBackground" destination="qKi-Tb-oj3" id="Emu-He-1Vu"/>
+                        <outlet property="imageMain" destination="TyH-IZ-dUF" id="ILP-oV-cl2"/>
+                        <outlet property="userCollectionView" destination="57i-3D-MSg" id="2qa-Ly-cYX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17.39130434782609" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="46" height="46"/>
+        <image name="edit_photo" width="47.5" height="47.5"/>
+        <image name="rifat" width="316" height="438"/>
+        <namedColor name="LogOut">
+            <color red="0.85098039215686272" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

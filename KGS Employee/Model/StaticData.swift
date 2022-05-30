@@ -162,5 +162,8 @@ import Foundation
     @objc static let holidayColors : [Int] = [
         0xE77DEB,0x8C73E0,0x4BC18B,0xE25454
     ]
+    static let userDetailHeaders : [String] = [
+        User.key_full_name,User.key_password,User.key_designation,User.key_phone,User.key_mail,User.key_dept
+    ]
     
 }

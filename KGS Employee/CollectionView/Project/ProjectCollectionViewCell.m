@@ -19,8 +19,14 @@
     self.labelTitle.text = appInfo.name;
     self.labelDescription.text = appInfo.subtitle;
     self.layer.cornerRadius = 10;
-    UIColor* uiColor = [UIColor colorNamed:@"ProjectDropShadow"];
-    [self dropShadowWithColor:uiColor opacity:0.8 offset:CGSizeMake(0, 3) radius:20 scale:false];
+    //rgba(245, 249, 252, 0.7)
+    UIColor* shadowColor = [UIColor colorNamed:@"ProjectDropShadow"];
+    UIColor* borderColor = [UIColor colorNamed:@"BorderColor"];
+    self.layer.borderColor = borderColor.CGColor;
+    self.layer.borderWidth = 1.0;
+    
+    
+    [self dropShadowWithColor:shadowColor opacity:1 offset:CGSizeMake(0, 3) radius:20 scale:false];
    // self.stackViewVacation.frame = self.imageIcon.bounds;
     
   //  self.stackViewVacation.bounds = self.imageIcon.bounds;

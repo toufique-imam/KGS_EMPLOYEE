@@ -26,18 +26,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationController()
-//        let user = User()
-//        user.name = "nuhash"
-//        user.password = "123"
-//        user.fullName = "toufique imam"
-//        user.email = "2013nuhash@gmail.com"
-//        user.department = "ios"
-//        user.designation = "Jr swe"
-//        user.imagePath = "icon_profile"
-//        CurrentUser.shared.addUser(user: user)
-        
         textFieldPassword.delegate = self
         textFieldUserName.delegate = self
+        if(CurrentUser.shared.isLoggedIn()){
+            gotoHomeViewController()
+        }
     }
     
     private func initNavigationController(){
@@ -62,8 +55,6 @@ class LoginViewController: UIViewController {
         self.navigationController?.setViewControllers([homepagevc], animated: true)
     }
     @IBAction func loginAction(_ sender: UIButton) {
-        gotoHomeViewController()
-        return
         let user = User()
         
         user.name = textFieldUserName.text ?? ""

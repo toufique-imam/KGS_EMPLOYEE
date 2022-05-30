@@ -7,6 +7,36 @@
 
 import UIKit
 
+//MARK: Blur UIIMAGE
+extension UIImage {
+    func blurImage(blurAmount: CGFloat) -> UIImage? {
+        let image = self;
+        guard let ciImage = CIImage(image: image) else { return nil }
+        let ciContext = CIContext(options: nil)
+        let blurFilter = CIFilter(name: "CIGaussianBlur")
+        blurFilter?.setValue(ciImage, forKey: kCIInputImageKey)
+        blurFilter?.setValue(blurAmount, forKey: kCIInputRadiusKey)
+        
+        guard let blurOutput = blurFilter?.outputImage else { return nil }
+        guard let cgimg = ciContext.createCGImage(blurOutput, from: ciImage.extent) else { return nil}
+        let processedImage = UIImage(cgImage: cgimg)
+        
+        return processedImage
+    }
+    
+}
+
+extension FileManager {
+  static var documentDirectoryURL: URL {
+    return `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
+  }
+}
+extension String {
+    var isValidEmail: Bool {
+        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+    }
+}
+
 extension UITextField {
     func setLeftIcon(iconName : String){
         self.leftView = UIView(frame: CGRect(x: 10, y: 0, width: 40, height: 40))

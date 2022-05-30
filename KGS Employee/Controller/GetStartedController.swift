@@ -7,9 +7,25 @@
 
 import UIKit
 
+enum ControllerType: Int{
+    case project = 0
+    case holiday
+}
+
 class GetStartedController : UIViewController {
     @IBOutlet weak var bottomTabBar : UITabBar!
     @IBOutlet weak var containerView : UIView!
+    
+    //TAB BAR Item
+    @IBOutlet weak var teamsTabBarItem: UITabBarItem!
+    @IBOutlet weak var sportsTabBarItem: UITabBarItem!
+    @IBOutlet weak var holidayTabBarItem: UITabBarItem!
+    @IBOutlet weak var projectsTabBarItem: UITabBarItem!
+    
+    
+    private var teamViewController: TeamViewController?
+    private var sportsViewController: SportsViewController?
+    private var projectViewController: ProjectViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,40 +42,90 @@ class GetStartedController : UIViewController {
         }else{
             print("no item found")
         }
-        //loadProjects()
-        //loadSports()
+        bottomTabBar.delegate = self
+        initNavigationController()
+        
+    }
+    
+    
+    private func initNavigationController(){
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+    }
+    @IBAction func goBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.layoutIfNeeded()
+        navigationController?.navigationBar.dropShadow(color: UIColor(named: "ProjectDropShadow")!, opacity: 1.0, offset: CGSize(width: 0, height: -3), radius: 20, scale: false)
+        bottomTabBar.dropShadow(color: UIColor(named: "ProjectDropShadow")!, opacity: 1.0, offset: CGSize(width: 0, height: -3), radius: 20, scale: false)
+       
+        self.bottomTabBar.setValue(true, forKey: "hidesShadow")
+
+        self.loadVC()
         loadTeams()
     }
-    func loadTeams(){
-        let storyboard = UIStoryboard.init(name: "Team", bundle: nil)
+    
+
+    func loadVC(){
+        var storyboard = UIStoryboard.init(name: "Sports", bundle: nil)
+        self.sportsViewController = storyboard.instantiateViewController(withIdentifier: "SportsViewController") as? SportsViewController
         
-        let teamvc = storyboard.instantiateViewController(withIdentifier: "TeamViewController") as! TeamViewController
-        teamvc.view.frame = containerView.bounds
-        containerView.addSubview(teamvc.view)
-        //addChild(teamvc)
-        addChild(teamvc)
+        storyboard = UIStoryboard.init(name: "Team", bundle: nil)
+        self.teamViewController = storyboard.instantiateViewController(withIdentifier: "TeamViewController") as? TeamViewController
+        
+        storyboard = UIStoryboard.init(name: "Project", bundle: nil)
+        self.projectViewController = storyboard.instantiateViewController(withIdentifier: "ProjectViewController") as? ProjectViewController
+        
+        addChild(sportsViewController!)
+        addChild(teamViewController!)
+        addChild(projectViewController!)
+        
+        self.containerView.addSubview(sportsViewController!.view)
+        self.containerView.addSubview(teamViewController!.view)
+        self.containerView.addSubview(projectViewController!.view)
+        
+    }
+    func loadTeams(){
+        self.navigationItem.title = "KGS Teams"
+        self.teamViewController?.view.frame = self.containerView.bounds
+        //self.showDetailViewController(<#T##vc: UIViewController##UIViewController#>, sender: <#T##Any?#>)
+        self.containerView.bringSubviewToFront(teamViewController!.view)
         containerView.didMoveToWindow()
     }
     func loadSports(){
-        let storyboard = UIStoryboard.init(name: "Sports", bundle: nil)
-        
-        let teamvc = storyboard.instantiateViewController(withIdentifier: "SportsViewController") as! SportsViewController
-        teamvc.view.frame = containerView.bounds
-        containerView.addSubview(teamvc.view)
-        //addChild(teamvc)
-        addChild(teamvc)
+        self.navigationItem.title = "KGS Sports"
+        self.sportsViewController?.view.frame = self.containerView.bounds
+        self.containerView.bringSubviewToFront(sportsViewController!.view)
         containerView.didMoveToWindow()
     }
     
-    func loadProjects(){
-        let storyboard = UIStoryboard.init(name: "Project", bundle: nil)
-        
-        let teamvc = storyboard.instantiateViewController(withIdentifier: "ProjectViewController") as! ProjectViewController
-        teamvc.view.frame = containerView.bounds
-        containerView.addSubview(teamvc.view)
-        //addChild(teamvc)
-        addChild(teamvc)
+    func loadProjects(_ type: ControllerType){
+        self.navigationItem.title = type == .project ? "Ongoing Projects" : "Holidays 2020"
+        self.projectViewController?.view.frame = self.containerView.bounds
+        self.containerView.bringSubviewToFront(projectViewController!.view)
         containerView.didMoveToWindow()
-        teamvc.initializeType(1);
+        projectViewController!.initializeType(Int32(type.rawValue));
+    }
+}
+
+extension GetStartedController: UITabBarDelegate{
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item == self.sportsTabBarItem{
+            self.loadSports()
+        } else if item == self.teamsTabBarItem{
+            self.loadTeams()
+        } else if item == self.holidayTabBarItem{
+            self.loadProjects(.holiday)
+        } else if item == self.projectsTabBarItem{
+            self.loadProjects(.project)
+        } else {
+            fatalError()
+        }
     }
 }

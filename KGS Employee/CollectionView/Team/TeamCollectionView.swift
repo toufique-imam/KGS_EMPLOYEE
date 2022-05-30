@@ -15,7 +15,7 @@ class TeamCollectionView: UICollectionView {
     //when selected send the data to delegate and change the button
     weak var teamDataDelegate : TeamDataDelegate? = nil
     let cellId = "TeamCollectionViewCell"
-    var selectedIndex : IndexPath? {
+    private var selectedIndex : IndexPath? {
         didSet{
             //print("selectedIndex " , oldValue , selectedIndex)
             if let oldValue = oldValue,
@@ -38,6 +38,10 @@ class TeamCollectionView: UICollectionView {
         self.delegate = self
         self.dataSource = self
         self.reloadData()
+    }
+    func setSelectedIndex(index : IndexPath){
+        self.selectedIndex = index
+        self.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
     }
 }
 
@@ -81,8 +85,13 @@ extension TeamCollectionView : UICollectionViewDelegateFlowLayout {
 }
 
 extension TeamCollectionView : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cell = cell as? TeamCollectionViewCell {
+            cell.toggleButton(selected: selectedIndex==indexPath)
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("called")
+        //print("called")
         self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         teamDataDelegate?.teamSelected(teamIndex: indexPath)
      //   selectedItem = indexPath

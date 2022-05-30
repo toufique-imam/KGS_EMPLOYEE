@@ -8,12 +8,13 @@
 import UIKit
 
 class TeamMemberCollectionView: UICollectionView {
-    let cellId = "TeamMemberCell";
-    var columnIndex : IndexPath = IndexPath(row: 0, section: 0)
-    let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-    let itemsPerRow : CGFloat = 1
+    private let cellId = "TeamMemberCell";
+    private var columnIndex : IndexPath = IndexPath(row: 0, section: 0)
+    private let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    private let itemsPerRow : CGFloat = 1
+    let zeroIndex = IndexPath(row: 0, section: 0)
     
-    var selectedIndex : IndexPath? = nil {
+    private var selectedIndex : IndexPath? = nil {
         didSet{
             if let oldValue = oldValue ,
                let cellOld = self.cellForItem(at: oldValue) as? TeamMemberCell{
@@ -41,6 +42,15 @@ class TeamMemberCollectionView: UICollectionView {
         self.delegate = self;
         self.dataSource = self;
         self.reloadData();
+    }
+    func setSelectedIndex(indexPath : IndexPath){
+        selectedIndex = indexPath
+        self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    func setColumnIndex(indexPath : IndexPath){
+        self.columnIndex = indexPath
+        self.selectedIndex = zeroIndex
+        self.scrollToItem(at: zeroIndex, at: .centeredHorizontally, animated: true)
     }
 }
 extension TeamMemberCollectionView : UICollectionViewDataSource{
@@ -76,14 +86,14 @@ extension TeamMemberCollectionView : UICollectionViewDelegateFlowLayout{
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = getAvailableHeight(collectionView)
-        print("height ",height)
+       // print("height ",height)
         return CGSize(width: height, height: height)
     }
     func getAvailableHeight(_ collectionView : UICollectionView)->Int{
         let paddingSpace = (itemsPerRow+1)*self.sectionInsets.bottom
         
         let availableHeight = collectionView.bounds.height - paddingSpace
-        print("paddingSpace " , paddingSpace , "availableHeight " , availableHeight)
+       // print("paddingSpace " , paddingSpace , "availableHeight " , availableHeight)
         return Int(availableHeight/itemsPerRow)
         
     }
