@@ -19,6 +19,7 @@ class UserDetailController: UIViewController {
         super.viewWillAppear(animated)
         initialize()
         initNavigationController()
+        imageMain.layer.cornerRadius =  0.5 * imageMain.bounds.size.width
     }
     
     private func initNavigationController(){
