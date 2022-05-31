@@ -37,6 +37,8 @@ class LoginViewController: UIViewController {
     
     private func initNavigationController(){
         self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+
     }
     
     override func viewDidLayoutSubviews() {
