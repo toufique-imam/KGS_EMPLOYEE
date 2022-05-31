@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,19 +26,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g6-hW-rdi">
-                                <rect key="frame" x="0.0" y="54" width="375" height="112"/>
+                                <rect key="frame" x="110.33333333333333" y="53.999999999999993" width="154.33333333333337" height="93.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="80"/>
                                 <color key="textColor" name="TitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGN-Qr-7O7">
-                                <rect key="frame" x="0.0" y="171" width="375" height="25.333333333333343"/>
+                                <rect key="frame" x="169.66666666666666" y="152.33333333333334" width="36" height="21"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
                                 <color key="textColor" name="TitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-CV-2LH">
-                                <rect key="frame" x="0.0" y="687" width="375" height="25"/>
+                                <rect key="frame" x="0.0" y="645" width="375" height="25"/>
                                 <color key="pageIndicatorTintColor" red="0.35294117647058826" green="0.35686274509803922" blue="0.42745098039215684" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" name="TitleColor"/>
                                 <connections>
@@ -47,8 +46,11 @@
                                 </connections>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-Bf-Oaz">
-                                <rect key="frame" x="30" y="722" width="315" height="31"/>
+                                <rect key="frame" x="37.666666666666657" y="680" width="300" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TVb-Bf-Oaz" secondAttribute="height" multiplier="300:48" id="eF4-Bn-IiK"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Get started">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,8 +60,8 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wvA-1K-Nr5" customClass="AppCollectionView" customModule="KGS_Employee" customModuleProvider="target">
-                                <rect key="frame" x="10" y="372" width="355" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="10" y="330" width="355" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Dks-d8-gy5"/>
                                 </constraints>
@@ -73,23 +75,21 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="GetStartedBackground"/>
                         <constraints>
-                            <constraint firstItem="TVb-Bf-Oaz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="0Z5-TF-XuM"/>
                             <constraint firstItem="TVb-Bf-Oaz" firstAttribute="top" secondItem="Hcr-CV-2LH" secondAttribute="bottom" constant="10" id="2am-AZ-Vvv"/>
                             <constraint firstItem="Hcr-CV-2LH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4ps-CC-xo7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hcr-CV-2LH" secondAttribute="trailing" id="8QL-Uw-laJ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eGN-Qr-7O7" secondAttribute="trailing" id="AXY-zs-RDT"/>
-                            <constraint firstItem="4g6-hW-rdi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CGm-0Y-50e"/>
+                            <constraint firstItem="TVb-Bf-Oaz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CAI-RO-VGP"/>
+                            <constraint firstItem="4g6-hW-rdi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CLg-5D-3Xp"/>
                             <constraint firstItem="4g6-hW-rdi" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="DhW-b7-6Qb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TVb-Bf-Oaz" secondAttribute="bottom" constant="50" id="E2F-Qk-4dH"/>
                             <constraint firstItem="Hcr-CV-2LH" firstAttribute="top" secondItem="wvA-1K-Nr5" secondAttribute="bottom" constant="15" id="LR6-Sh-ts7"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4g6-hW-rdi" secondAttribute="trailing" id="Oo2-5g-rZ9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TVb-Bf-Oaz" secondAttribute="trailing" constant="30" id="R0L-KU-QcN"/>
                             <constraint firstItem="wvA-1K-Nr5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="TFx-w3-ogk"/>
-                            <constraint firstItem="eGN-Qr-7O7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gQr-tT-2q0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wvA-1K-Nr5" secondAttribute="trailing" constant="10" id="hCM-qc-zJL"/>
+                            <constraint firstItem="eGN-Qr-7O7" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lQe-6h-vx1"/>
                             <constraint firstItem="eGN-Qr-7O7" firstAttribute="top" secondItem="4g6-hW-rdi" secondAttribute="bottom" constant="5" id="pfS-qc-VzB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TVb-Bf-Oaz" secondAttribute="bottom" constant="25" id="tZC-xd-NlR"/>
+                            <constraint firstItem="TVb-Bf-Oaz" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="48:812" id="xaw-wh-Kmp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J4T-6H-jZP">
@@ -120,11 +120,11 @@
     <resources>
         <image name="apps" width="44" height="44"/>
         <image name="settings" width="44" height="44"/>
+        <namedColor name="GetStartedBackground">
+            <color red="0.95686274509803926" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TitleColor">
             <color red="0.35294117647058826" green="0.35686274509803922" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

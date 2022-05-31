@@ -10,7 +10,7 @@ import UIKit
 class AppSlideCollectionView: UICollectionView {
     let cellId = "AppSlideCollectionViewCell"
     let itemsPerRow : CGFloat = 1
-    let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
+    let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
     let scaleBigX : CGFloat = 280
     let scaleBigY : CGFloat = 156 , scaleSmallY = 136
     let scaleSmallX : CGFloat = 280 * 136 / 156

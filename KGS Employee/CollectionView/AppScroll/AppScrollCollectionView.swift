@@ -10,7 +10,7 @@ import UIKit
 class AppScrollCollectionView: UICollectionView {
     let cellId = "AppScrollCollectionViewCell"
     let itemsPerRow : CGFloat = 1
-    let sectionInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    let sectionInsets = UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
     
     override func awakeFromNib() {
         let nibCell = UINib(nibName: cellId, bundle: nil)

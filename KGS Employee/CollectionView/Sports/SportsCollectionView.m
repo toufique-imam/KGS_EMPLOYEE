@@ -59,7 +59,7 @@ UICollectionViewDelegateFlowLayout
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     int width = [self getAvailableWidth:collectionView];
     int height = 169 * width / 145;
-    NSLog(@"%d %d\n" , width , height);
+    //NSLog(@"%d %d\n" , width , height);
     return CGSizeMake(width, height);
     
 }
@@ -70,7 +70,7 @@ UICollectionViewDelegateFlowLayout
 -(int) getAvailableWidth:(UICollectionView *)collectionView {
     int paddingSpace = (self.itemPerRow + 1) * self.sectionInsets.left;
     int availableWidth = collectionView.bounds.size.width - paddingSpace;
-    NSLog(@"paddingSpace: %d availableWidth: %d\n main width %f\n" , paddingSpace , availableWidth , collectionView.frame.size.width);
+    //NSLog(@"paddingSpace: %d availableWidth: %d\n main width %f\n" , paddingSpace , availableWidth , collectionView.frame.size.width);
     return (availableWidth / _itemPerRow);
 }
 

@@ -15,6 +15,7 @@ class AppsSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dummyView.clipsToBounds = true
         dummyView.layer.cornerRadius = 10
         dummyView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]

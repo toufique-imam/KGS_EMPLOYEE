@@ -80,13 +80,18 @@ extension TeamViewController : TeamDataDelegate {
     }
     
     func employeeSelected(employee user: User) {
-        imageMain.image = UIImage(named: user.imagePath)
+        if let image = UIImage(named: user.imagePath) {
+            imageMain.image = image
+        }else{
+            imageMain.image = User.loadImage(for: user)
+        }
         labelName.text = user.fullName
         labelDesignation.text = user.designation
-        if let image = UIImage(named: user.imagePath)?.blurImage(blurAmount: 46) {
+        if let image = imageMain.image?.blurImage(blurAmount: 46) {
             imageBackground.image = image
         }else{
-            print("image could not be blurred")
+            print("no image found or image couldnot be blurred")
+            imageBackground.image = nil
         }
         
     }

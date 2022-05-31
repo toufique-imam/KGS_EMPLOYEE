@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,11 +22,11 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="qKi-Tb-oj3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="336.5"/>
-                                        <color key="backgroundColor" name="LogOut"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="TyH-IZ-dUF">
                                         <rect key="frame" x="142" y="103" width="130" height="130.5"/>
-                                        <color key="backgroundColor" red="0.32941177490000001" green="0.63921570780000003" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TyH-IZ-dUF" secondAttribute="height" id="bxo-vm-dMZ"/>
                                         </constraints>
@@ -96,6 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qQS-Kb-abc">
                         <barButtonItem key="leftBarButtonItem" title="back" image="back" landscapeImage="back" id="Nj1-Hc-D4h">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="goBack:" destination="Y6W-OH-hqX" id="Oiq-SZ-pa2"/>
                             </connections>
@@ -117,9 +117,6 @@
         <image name="back" width="46" height="46"/>
         <image name="edit_photo" width="47.5" height="47.5"/>
         <image name="rifat" width="316" height="438"/>
-        <namedColor name="LogOut">
-            <color red="0.85098039215686272" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

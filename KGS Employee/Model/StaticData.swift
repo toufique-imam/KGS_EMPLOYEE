@@ -47,7 +47,7 @@ import Foundation
                                         "Manager Accounts",
                                         "ios swe",
                                         "android swe"]
-    static let employees : [[User]] = [
+    static var employees : [[User]] = [
         [User(name: "rifat", password: "123", fullName: "Rifat Hasnat", designation: "ios", phone: "01521108127", email: "rifat@gmail.com", department: "ios", imagePath: "rifat"),
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
          User(name: "omar", password: "123", fullName: "Omar Faruk", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),

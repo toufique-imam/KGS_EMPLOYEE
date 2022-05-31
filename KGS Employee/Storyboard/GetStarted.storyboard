@@ -22,7 +22,7 @@
                             </containerView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aba-PE-WFs">
                                 <rect key="frame" x="0.0" y="769.5" width="414" height="92.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aba-PE-WFs" secondAttribute="height" multiplier="375:84" id="AFq-Td-RKE"/>
                                 </constraints>
@@ -48,7 +48,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7My-8Y-ejL">
-                        <barButtonItem key="leftBarButtonItem" title="back" image="back" landscapeImage="back" id="m05-QE-Jdh">
+                        <barButtonItem key="leftBarButtonItem" title="back" image="back" landscapeImage="back" width="60" id="m05-QE-Jdh">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="goBack:" destination="Y6W-OH-hqX" id="O46-ze-6xQ"/>
                             </connections>

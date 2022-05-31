@@ -60,9 +60,11 @@ class User : Codable {
         }else if(key==User.key_mail && value.isValidEmail){
             self.email = value
             return true
-        }else{
+        }else if(key==User.key_dept){
             self.department = value
             return true
+        }else{
+            return false
         }
     }
     init(name:String = "placeholder name", password:String = "placeholder password",fullName:String = "full name placeholder",
@@ -86,17 +88,17 @@ class User : Codable {
     
     static func saveImage(_ image: UIImage, for user: User) {
         let imageURL = FileManager.documentDirectoryURL.appendingPathComponent(user.name)
-      if let jpgData = image.jpegData(compressionQuality: 0.7) {
-        try? jpgData.write(to: imageURL, options: .atomicWrite)
-      }
+        if let jpgData = image.jpegData(compressionQuality: 0.7) {
+            try? jpgData.write(to: imageURL, options: .atomicWrite)
+        }
     }
     
     /// Loads and returns an image for a given book title.
     /// - Parameter title: Title of the book you need an image for.
     /// - Returns: The image associated with the given book title.
     static func loadImage(for user: User) -> UIImage? {
-      let imageURL = FileManager.documentDirectoryURL.appendingPathComponent(user.name)
-      return UIImage(contentsOfFile: imageURL.path)
+        let imageURL = FileManager.documentDirectoryURL.appendingPathComponent(user.name)
+        return UIImage(contentsOfFile: imageURL.path)
     }
 }
 
@@ -110,28 +112,64 @@ class CurrentUser {
     private init(){
         
     }
-    
+    //MARK: gets current user name and password then fetch the full data from main array
     func getCurrentUser()->User?{
+        //checks if current user is set
+        if(self.user != nil) {
+            return self.user
+        }
+        //otherwise first get the username and password
         let standardUserDefaults = UserDefaults.standard
         let decoder = JSONDecoder()
         if let currentUser = standardUserDefaults.object(forKey: CurrentUser.loginKey) as? Data {
             if let objectsDecoded = try? decoder.decode(User.self, from: currentUser) as User {
-                return objectsDecoded
+                //gets the total info from getCurrentUser
+                return getUser(for: objectsDecoded) ?? objectsDecoded
             }
         }
         return nil
     }
+    
+    func getAllUsers()->[User] {
+        if let objects = UserDefaults.standard.value(forKey: CurrentUser.users) as? Data {
+            let decoder = JSONDecoder()
+            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
+                return objectsDecoded
+            }
+        }
+        return []
+    }
+    
+    //MARK: fetchs the full data from main array given user name and password
+    private func getUser(for userT: User)->User? {
+        let savedUsers = getAllUsers()
+        
+        for suser in savedUsers {
+            if(userT.name==suser.name && userT.password==suser.password){
+                return suser
+            }
+        }
+        return nil
+    }
+    //MARK: Checks if any user is logged in
     func isLoggedIn()->Bool {
-        user = getCurrentUser()
+        self.user = getCurrentUser()
         return self.user != nil
     }
+    
     func logout(){
-        user = nil
+        self.user = nil
         let standardUserDefaults = UserDefaults.standard
         standardUserDefaults.removeObject(forKey: CurrentUser.loginKey)
     }
+    
+    //MARK: set login user info
     func setLoginUser(user : User) {
-        updateUser(userOld: self.user!, userNew: user)
+        if let userOld = self.user {
+            print("new " , user.name , user.password)
+            print("old " , userOld.name , userOld.password)
+            updateUser(userOld: userOld, userNew: user)
+        }
         self.user = user
         let standardUserDefaults = UserDefaults.standard
         
@@ -140,41 +178,30 @@ class CurrentUser {
             standardUserDefaults.set(encoded, forKey: CurrentUser.loginKey)
         }
     }
+    //MARK: checks and login the user
     func login(user:User)->Bool{
-        if(checkLoginIngo(user: user)){
-            setLoginUser(user: user)
+        //checks if the user is present
+        if(checkLoginInfo(user: user)){
+            //fetches the total info for the user
+            self.user = getUser(for: user)
+            //set the user as current login
+            setLoginUser(user: self.user!)
             return true
         }else{
             return false
         }
     }
-    func checkLoginIngo(user:User)->Bool {
-        //TODO: check user name and password in UserDefaults
-        var savedUsers: [User] = []
-        if let objects = UserDefaults.standard.value(forKey: CurrentUser.users) as? Data {
-            let decoder = JSONDecoder()
-            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
-                savedUsers = objectsDecoded
-            }
-        }
-        
-        for suser in savedUsers {
-            print(suser.name , suser.password)
-            if(user.name==suser.name && user.password==suser.password){
-                return true
-            }
-        }
-        return false
+    
+    //MARK: checks login info using username and password
+    func checkLoginInfo(user:User)->Bool {
+        return getUser(for: user) != nil
     }
     
+    
+    //MARK: replaces the userold with usernew
+    //findx the index and then replaces it
     func updateUser(userOld : User , userNew : User) {
-        var savedUsers: [User] = []
-        if let objects = UserDefaults.standard.value(forKey: CurrentUser.users) as? Data {
-            let decoder = JSONDecoder()
-            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
-                savedUsers = objectsDecoded
-            }
-        }
+        var savedUsers = getAllUsers()
         
         var idxDel = -1
         for (idx , suser) in savedUsers.enumerated() {
@@ -182,7 +209,9 @@ class CurrentUser {
                 idxDel = idx
             }
         }
-        savedUsers.remove(at: idxDel)
+        if(idxDel != -1){
+            savedUsers.remove(at: idxDel)
+        }
         savedUsers.append(userNew)
         
         
@@ -194,14 +223,7 @@ class CurrentUser {
     
     
     func addUser(user: User){
-        var savedUsers: [User] = []
-        if let objects = UserDefaults.standard.value(forKey: CurrentUser.users) as? Data {
-            let decoder = JSONDecoder()
-            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [User] {
-                savedUsers = objectsDecoded
-            }
-        }
-        
+        var savedUsers = getAllUsers()
         
         for suser in savedUsers {
             if(user.name==suser.name && user.password==suser.password){
@@ -209,7 +231,6 @@ class CurrentUser {
             }
         }
         savedUsers.append(user)
-        
         
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(savedUsers){

@@ -29,6 +29,7 @@ class GetStartedController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         bottomTabBar.tintColor = UIColor.init(named: "TitleColor")!
         bottomTabBar.unselectedItemTintColor = UIColor.init(named: "TabUnselected")!
         let offset = UIOffset(horizontal: 0, vertical: -18)
@@ -49,11 +50,20 @@ class GetStartedController : UIViewController {
     
     
     private func initNavigationController(){
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        if let navigationController = self.navigationController {
+            navigationController.navigationBar.isHidden = false
+            navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationController.navigationBar.shadowImage = UIImage()
+            navigationController.navigationBar.isTranslucent = true
+            navigationController.navigationBar.backgroundColor = UIColor.clear
+            navigationController.navigationBar.titleTextAttributes = [
+                NSAttributedString.Key.font : UIFont(name: "Poppins-SemiBold", size: 17.0)! ,
+                NSAttributedString.Key.foregroundColor : UIColor(named: "TitleColor")!
+            ]
+            navigationController.navigationItem.leftBarButtonItem?.width = 46
+        }
+        bottomTabBar.backgroundImage = UIImage()
+        bottomTabBar.shadowImage = UIImage()
     }
     @IBAction func goBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -62,16 +72,14 @@ class GetStartedController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.layoutIfNeeded()
-        navigationController?.navigationBar.dropShadow(color: UIColor(named: "ProjectDropShadow")!, opacity: 1.0, offset: CGSize(width: 0, height: -3), radius: 20, scale: false)
-        bottomTabBar.dropShadow(color: UIColor(named: "ProjectDropShadow")!, opacity: 1.0, offset: CGSize(width: 0, height: -3), radius: 20, scale: false)
-       
-        self.bottomTabBar.setValue(true, forKey: "hidesShadow")
-
+        navigationController?.navigationBar.dropShadowRectBottom(color: UIColor(named: "ProjectDropShadow")!, opacity: 1.0, offset: CGSize(width: 0, height: -3), radius: 20, scale: false)
+        bottomTabBar.dropShadowRectTop(color: UIColor(named: "ProjectDropShadow")!, opacity: 1.0, offset: CGSize(width: 0, height: -3), radius: 20, scale: false)
+        
+        //        self.bottomTabBar.setValue(true, forKey: "hidesShadow")
         self.loadVC()
         loadTeams()
     }
     
-
     func loadVC(){
         var storyboard = UIStoryboard.init(name: "Sports", bundle: nil)
         self.sportsViewController = storyboard.instantiateViewController(withIdentifier: "SportsViewController") as? SportsViewController

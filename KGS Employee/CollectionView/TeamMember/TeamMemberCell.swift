@@ -15,7 +15,11 @@ class TeamMemberCell: UICollectionViewCell {
         // Initialization code
     }
     func loadCell(user: User){
-        imageView.image = UIImage.init(named: user.imagePath)
+        if let image =  UIImage.init(named: user.imagePath) {
+            imageView.image = image
+        }else{
+            imageView.image = User.loadImage(for: user)
+        }
         imageView.layer.cornerRadius = 10
     }
     func updateCellState(isSelected:Bool){

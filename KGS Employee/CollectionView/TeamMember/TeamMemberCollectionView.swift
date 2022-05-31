@@ -62,8 +62,8 @@ extension TeamMemberCollectionView : UICollectionViewDataSource{
         else{
             preconditionFailure("invalid cell type")
         }
-        if let user = teamDataDelegate?.getEmployee(for: IndexPath(row: indexPath.row, section: columnIndex.row))
-        {cell.loadCell(user: user)
+        if let user = teamDataDelegate?.getEmployee(for: IndexPath(row: indexPath.row, section: columnIndex.row)){
+            cell.loadCell(user: user)
             cell.updateCellState(isSelected: indexPath==selectedIndex)
         }
         return cell
@@ -86,14 +86,14 @@ extension TeamMemberCollectionView : UICollectionViewDelegateFlowLayout{
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = getAvailableHeight(collectionView)
-       // print("height ",height)
+        // print("height ",height)
         return CGSize(width: height, height: height)
     }
     func getAvailableHeight(_ collectionView : UICollectionView)->Int{
         let paddingSpace = (itemsPerRow+1)*self.sectionInsets.bottom
         
         let availableHeight = collectionView.bounds.height - paddingSpace
-       // print("paddingSpace " , paddingSpace , "availableHeight " , availableHeight)
+        // print("paddingSpace " , paddingSpace , "availableHeight " , availableHeight)
         return Int(availableHeight/itemsPerRow)
         
     }

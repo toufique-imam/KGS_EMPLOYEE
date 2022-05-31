@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         textFieldPassword.delegate = self
         textFieldUserName.delegate = self
         if(CurrentUser.shared.isLoggedIn()){
+            StaticData.employees[0].insert(CurrentUser.shared.getCurrentUser()!, at: 0)
             gotoHomeViewController()
         }
     }
@@ -40,7 +41,6 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if(!isInit){
-            
             self.initializeViews()
             isInit = true
         }
@@ -60,9 +60,15 @@ class LoginViewController: UIViewController {
         user.name = textFieldUserName.text ?? ""
         user.password = textFieldPassword.text ?? ""
         if(CurrentUser.shared.login(user: user)){
+            StaticData.employees[0].insert(CurrentUser.shared.getCurrentUser()!, at: 0)
             gotoHomeViewController()
         }else{
-            //TODO: show aleat dialogue for incorrect info
+            // create the alert
+            let alert = UIAlertController(title: "Incorrect Login Info", message: "user :  \(user.name) with password : \(user.password) not found", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
