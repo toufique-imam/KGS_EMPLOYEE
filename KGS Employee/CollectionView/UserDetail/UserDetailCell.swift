@@ -15,6 +15,7 @@ class UserDetailCell: UICollectionViewCell {
     @IBOutlet weak var buttonEdit: UIButton!
     @IBOutlet weak var buttonSubmit : UIButton!
     var indexNow : IndexPath? = nil
+    var textPrev = ""
     
     weak var touchDownDelegate : TouchDownDelegate? = nil
     override func awakeFromNib() {
@@ -24,6 +25,7 @@ class UserDetailCell: UICollectionViewCell {
     }
     
     @IBAction func editButtonTapped(_ sender: UIButton) {
+        textPrev = textField.text ?? ""
         buttonEdit.isEnabled = false
         buttonEdit.isHidden = true
         
@@ -47,7 +49,9 @@ class UserDetailCell: UICollectionViewCell {
         
         textField.isEnabled = false
         
-        touchDownDelegate?.updateText(for: labelHeader.text ?? "", value: textField.text ?? "" )
+        if(touchDownDelegate?.updateText(for: labelHeader.text ?? "", value: textField.text ?? "" ) == false ) {
+            textField.text = textPrev
+        }
         
         print("okk2")
     }

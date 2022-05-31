@@ -17,8 +17,10 @@ class UserDetailController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.initKeyboardNotification()
         initialize()
         initNavigationController()
+        self.hideKeyboardWhenTappedAround()
         imageMain.layer.cornerRadius =  0.5 * imageMain.bounds.size.width
     }
     
@@ -63,6 +65,30 @@ class UserDetailController: UIViewController {
     }
 }
 
+//MARK: keyboard
+extension UserDetailController {
+    func initKeyboardNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    @objc func keyboardWillShow(_ notification : Notification){
+        adjustInsetForKeyboard(true, notification: notification)
+    }
+    @objc func keyboardWillHide(_ notification : Notification){
+        adjustInsetForKeyboard(false, notification: notification)
+    }
+    
+    func adjustInsetForKeyboard(_ show : Bool , notification : Notification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame =  userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        else {
+            return
+        }
+        let adjustmentHeight = (keyboardFrame.cgRectValue.height + 20) * (show ? 1 : -1)
+        userCollectionView.contentInset.bottom += adjustmentHeight
+        userCollectionView.verticalScrollIndicatorInsets.bottom += adjustmentHeight
+    }
+}
 
 extension UserDetailController : UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -76,12 +102,15 @@ extension UserDetailController : UIImagePickerControllerDelegate , UINavigationC
 }
 
 extension UserDetailController : TouchDownDelegate {
-    func updateText(for header: String, value: String) {
+    
+    func updateText(for header: String, value: String)->Bool {
         print(header , value)
         if(!value.isEmpty && !header.isEmpty && user.updateValue(for: header, value: value)){
             CurrentUser.shared.setLoginUser(user: user)
+            return true
         }else{
             invalidData(for: header, value: value)
+            return false 
         }
     }
     func touchDown(indexPath: IndexPath) {

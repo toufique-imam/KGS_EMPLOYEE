@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
         initNavigationController()
         textFieldPassword.delegate = self
         textFieldUserName.delegate = self
+        self.hideKeyboardWhenTappedAround()
         if(CurrentUser.shared.isLoggedIn()){
             StaticData.employees[0].insert(CurrentUser.shared.getCurrentUser()!, at: 0)
             gotoHomeViewController()

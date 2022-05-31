@@ -9,5 +9,5 @@ import Foundation
 
 protocol TouchDownDelegate : AnyObject {
     func touchDown(indexPath: IndexPath)
-    func updateText(for header:String , value:String)
+    func updateText(for header:String , value:String) -> Bool
 }

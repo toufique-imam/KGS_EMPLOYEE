@@ -45,7 +45,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MB6-UM-emt" secondAttribute="height" multiplier="375:305" id="44B-Bh-zYI"/>
                                     <constraint firstItem="qKi-Tb-oj3" firstAttribute="leading" secondItem="MB6-UM-emt" secondAttribute="leading" id="53e-2l-6Sy"/>
@@ -79,7 +79,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GyM-OZ-ud0"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MB6-UM-emt" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="2eg-EN-Dwr"/>
                             <constraint firstItem="GyM-OZ-ud0" firstAttribute="trailing" secondItem="57i-3D-MSg" secondAttribute="trailing" id="4J8-Cz-z7a"/>
@@ -119,12 +119,6 @@
         <image name="rifat" width="316" height="438"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

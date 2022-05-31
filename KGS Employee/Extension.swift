@@ -26,17 +26,21 @@ extension UIImage {
     
 }
 
+//MARK: Loads image given path
 extension FileManager {
   static var documentDirectoryURL: URL {
     return `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
   }
 }
+
+//MARK: checks email pattern
 extension String {
     var isValidEmail: Bool {
         NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
     }
 }
 
+//MARK: with left icon
 extension UITextField {
     func setLeftIcon(iconName : String){
         self.leftView = UIView(frame: CGRect(x: 10, y: 0, width: 40, height: 40))
@@ -56,6 +60,7 @@ extension UITextField {
     }
 }
 
+//MARK: drop shadow
 extension UIView {
     
     enum ShadowPath{
@@ -200,6 +205,7 @@ extension UIButton {
         }
     }
 }
+
 //MARK: UIColor from hex
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
@@ -237,5 +243,17 @@ extension UIColor {
             blue: rgb & 0xFF,
             a: a
         )
+    }
+}
+
+//MARK: hides keyboard when tapped around
+extension UIViewController {
+    func hideKeyboardWhenTappedAround(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
 }

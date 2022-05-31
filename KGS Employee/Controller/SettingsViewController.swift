@@ -58,7 +58,7 @@ extension SettingsViewController : TouchDownDelegate {
         }
     }
     
-    func updateText(for header: String, value: String) {
-        
+    func updateText(for header: String, value: String)->Bool {
+        fatalError("should not be called here")
     }
 }
