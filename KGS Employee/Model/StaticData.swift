@@ -50,7 +50,7 @@ import Foundation
     static var employees : [[User]] = [
         [User(name: "rifat", password: "123", fullName: "Rifat Hasnat", designation: "ios", phone: "01521108127", email: "rifat@gmail.com", department: "ios", imagePath: "rifat"),
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
          User(name: "tamim", password: "123", fullName: "Tamim Dari", designation: "ios", phone: "01521108127", email: "tamim@gmail.com", department: "ios", imagePath: "tamim"),
          User(name: "sourav", password: "123", fullName: "Sourav Hasnat", designation: "ios", phone: "01521108127", email: "sourav@gmail.com", department: "ios", imagePath: "sourav")
@@ -68,7 +68,7 @@ import Foundation
           User(name: "rifat", password: "123", fullName: "Rifat Hasnat 1", designation: "ios", phone: "01521108127", email: "rifat@gmail.com", department: "ios", imagePath: "rifat"),
          
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine 1", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 1", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 1", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar 1", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
          User(name: "tamim", password: "123", fullName: "Tamim Dari 1", designation: "ios", phone: "01521108127", email: "tamim@gmail.com", department: "ios", imagePath: "tamim"),
          User(name: "sourav", password: "123", fullName: "Sourav Hasnat 1", designation: "ios", phone: "01521108127", email: "sourav@gmail.com", department: "ios", imagePath: "sourav")
@@ -85,7 +85,7 @@ import Foundation
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine 2", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
          
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine 2", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 2", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 2", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar 2", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
          User(name: "tamim", password: "123", fullName: "Tamim Dari 2", designation: "ios", phone: "01521108127", email: "tamim@gmail.com", department: "ios", imagePath: "tamim"),
          User(name: "sourav", password: "123", fullName: "Sourav Hasnat 2", designation: "ios", phone: "01521108127", email: "sourav@gmail.com", department: "ios", imagePath: "sourav")
@@ -93,15 +93,15 @@ import Foundation
         
         [User(name: "rifat", password: "123", fullName: "Rifat Hasnat 3", designation: "ios", phone: "01521108127", email: "rifat@gmail.com", department: "ios", imagePath: "rifat"),
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine 3", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 3", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
          
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar 3", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
          User(name: "tamim", password: "123", fullName: "Tamim Dari", designation: "ios", phone: "01521108127", email: "tamim@gmail.com", department: "ios", imagePath: "tamim"),
@@ -110,7 +110,7 @@ import Foundation
         
         [User(name: "rifat", password: "123", fullName: "Rifat Hasnat 4", designation: "ios", phone: "01521108127", email: "rifat@gmail.com", department: "ios", imagePath: "rifat"),
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine 4", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 4", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 4", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar 4", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar 4", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar 4", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
@@ -127,7 +127,7 @@ import Foundation
         
         [User(name: "rifat", password: "123", fullName: "Rifat Hasnat 5", designation: "ios", phone: "01521108127", email: "rifat@gmail.com", department: "ios", imagePath: "rifat"),
          User(name: "hasnaine", password: "123", fullName: "Shahwat Hasnaine 5", designation: "ios", phone: "01521108127", email: "hasnaine@gmail.com", department: "ios", imagePath: "hasnaine"),
-         User(name: "omar", password: "123", fullName: "Omar Faruk 5", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
+         User(name: "omar", password: "123", fullName: "Omar Faruque 5", designation: "ios", phone: "01521108127", email: "omar@gmail.com", department: "ios", imagePath: "omar"),
          User(name: "rezaul", password: "123", fullName: "Rezaul Haque Sagar 5", designation: "ios", phone: "01521108127", email: "rezaul@gmail.com", department: "ios", imagePath: "rezaul"),
          User(name: "tamim", password: "123", fullName: "Tamim Dari 5", designation: "ios", phone: "01521108127", email: "tamim@gmail.com", department: "ios", imagePath: "tamim"),
          User(name: "tamim", password: "123", fullName: "Tamim Dari 5", designation: "ios", phone: "01521108127", email: "tamim@gmail.com", department: "ios", imagePath: "tamim"),

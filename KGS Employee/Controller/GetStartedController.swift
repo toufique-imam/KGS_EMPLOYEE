@@ -45,6 +45,7 @@ class GetStartedController : UIViewController {
         }
         bottomTabBar.delegate = self
         initNavigationController()
+        clearBottomNavShadow()
         
     }
     
@@ -62,6 +63,8 @@ class GetStartedController : UIViewController {
             ]
             navigationController.navigationItem.leftBarButtonItem?.width = 46
         }
+    }
+    func clearBottomNavShadow(){
         bottomTabBar.backgroundImage = UIImage()
         bottomTabBar.shadowImage = UIImage()
     }

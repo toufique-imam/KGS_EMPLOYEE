@@ -75,6 +75,8 @@
 		BCBBECD82844C1C00072DEB7 /* UserDetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBECD72844C1C00072DEB7 /* UserDetailCollectionView.swift */; };
 		BCBBECDB2844C1DE0072DEB7 /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBECD92844C1DE0072DEB7 /* UserDetailCell.swift */; };
 		BCBBECDC2844C1DE0072DEB7 /* UserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBBECDA2844C1DE0072DEB7 /* UserDetailCell.xib */; };
+		BCBD0D5828461DB80031DC28 /* DetailEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBD0D5728461DB80031DC28 /* DetailEmployee.storyboard */; };
+		BCBD0D5A284627D50031DC28 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD0D59284627D50031DC28 /* EmployeeDetailViewController.swift */; };
 		BCCBA207283DE4830061CE14 /* AppCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE196B0283D18090041B188 /* AppCollectionView.swift */; };
 		BCCBA208283DE4860061CE14 /* AppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE196B1283D18090041B188 /* AppCollectionViewCell.xib */; };
 		BCCBA209283DE4880061CE14 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE196B2283D18090041B188 /* AppCollectionViewCell.swift */; };
@@ -164,6 +166,8 @@
 		BCBBECD72844C1C00072DEB7 /* UserDetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCollectionView.swift; sourceTree = "<group>"; };
 		BCBBECD92844C1DE0072DEB7 /* UserDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
 		BCBBECDA2844C1DE0072DEB7 /* UserDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailCell.xib; sourceTree = "<group>"; };
+		BCBD0D5728461DB80031DC28 /* DetailEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEmployee.storyboard; sourceTree = "<group>"; };
+		BCBD0D59284627D50031DC28 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
 		BCDA87912836457300B6EA22 /* KGS Employee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KGS Employee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA87942836457300B6EA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCDA87962836457300B6EA22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				BCAEFF3828435A42001D204B /* ProjectViewController.h */,
 				BCAEFF3928435A42001D204B /* ProjectViewController.m */,
 				BC7FB17C2844CED400F1475D /* UserDetailController.swift */,
+				BCBD0D59284627D50031DC28 /* EmployeeDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				BCAEC858283F9DAC0012108F /* Sports.storyboard */,
 				BCAEFF34284353FA001D204B /* Project.storyboard */,
 				BCBBECD42844B9880072DEB7 /* UserDetail.storyboard */,
+				BCBD0D5728461DB80031DC28 /* DetailEmployee.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCAEC865283FA0270012108F /* SportsCollectionViewCell.xib in Resources */,
+				BCBD0D5828461DB80031DC28 /* DetailEmployee.storyboard in Resources */,
 				BC72DBA9283DF41C0027B60C /* Poppins-BoldItalic.ttf in Resources */,
 				BCAEFF3E284386F0001D204B /* TeamMemberCell.xib in Resources */,
 				BC72DBCD283E25F00027B60C /* SFPRODISPLAY-MEDIUM.OTF in Resources */,
@@ -549,6 +556,7 @@
 				BCCBA209283DE4880061CE14 /* AppCollectionViewCell.swift in Sources */,
 				BCDA87972836457300B6EA22 /* SceneDelegate.swift in Sources */,
 				BCAEC844283F768B0012108F /* GetStartedController.swift in Sources */,
+				BCBD0D5A284627D50031DC28 /* EmployeeDetailViewController.swift in Sources */,
 				BCAEFF3128434081001D204B /* ProjectCollectionView.m in Sources */,
 				BC72DBD3283E2B930027B60C /* SettingsHeaderView.swift in Sources */,
 				BC72DBBA283DFC920027B60C /* ScrollDelegate.swift in Sources */,
@@ -728,6 +736,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -763,6 +772,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

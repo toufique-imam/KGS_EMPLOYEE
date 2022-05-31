@@ -257,3 +257,21 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+//pop / push controller with animation
+extension UINavigationController{
+    func popViewControllerM(){
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0,options: .curveEaseOut , animations: {
+            UIView.setAnimationCurve(.easeOut)
+            self.popViewController(animated: false)
+            UIView.setAnimationTransition(.curlUp, for: self.view, cache: false)
+        })
+    }
+    func pushViewControllerM(viewController : UIViewController){
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0,options: .curveEaseIn , animations: {
+            UIView.setAnimationCurve(.easeIn)
+            self.pushViewController(viewController, animated: false)
+            UIView.setAnimationTransition(.curlDown, for: self.view, cache: false)
+        })
+    }
+}

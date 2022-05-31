@@ -22,9 +22,9 @@ class AppCollectionView : UICollectionView {
     override func awakeFromNib() {
         let nibCell = UINib(nibName: self.cellID, bundle: nil)
         self.register(nibCell, forCellWithReuseIdentifier: self.cellID)
-        self.initialize()
+        //self.initialize()
     }
-    private func initialize(){
+    func initialize(){
         self.dataSource = self
         self.delegate = self
         isPagingEnabled = true
@@ -84,7 +84,10 @@ extension AppCollectionView : UICollectionViewDelegateFlowLayout {
         sectionInsets.left
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: getAvailableWidth(collectionView), height: getAvailableHeight(collectionView))
+        let width = getAvailableWidth(collectionView)
+        let height = (335 * width) / 375
+        print(width , height)
+        return CGSize(width: getAvailableWidth(collectionView), height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         sectionInsets

@@ -187,7 +187,13 @@ class CurrentUser {
             //set the user as current login
             setLoginUser(user: self.user!)
             return true
-        }else{
+        }else if(getAllUsers().isEmpty){
+            addUser(user: user)
+            self.user = user
+            setLoginUser(user: self.user!)
+            return true
+        }
+        else{
             return false
         }
     }

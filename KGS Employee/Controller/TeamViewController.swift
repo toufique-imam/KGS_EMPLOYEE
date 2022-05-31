@@ -16,6 +16,7 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var imageBackground : UIImageView!
     @IBOutlet weak var stackViewMemberHeader : UIStackView!
     @IBOutlet weak var mainView: UIView!
+    var userNow: User = StaticData.employees[0][0]
     let indexZero = IndexPath(row: 0, section: 0)
     let colorStart = UIColor.clear , colorMid = UIColor.init(red: 0, green: 0, blue: 0, a: 0.6) , colorEnd = UIColor.init(red: 0, green: 0, blue: 0, a: 0.9)
     @IBOutlet weak var gradientView: UIView!
@@ -26,7 +27,20 @@ class TeamViewController: UIViewController {
         gradientView.addGradientLayerInBackground(frame: gradientView.bounds, colors: [colorStart , colorMid , colorEnd])
         gradientView.alpha = 1
 //        gradientView.dropShadow(color: UIColor.red, opacity: 0.5, offset: CGSize(width: 1, height: 1), radius: 10, scale: false)
-        
+    }
+    @objc func openDetailEmployee(){
+        let storyboard = UIStoryboard.init(name: "DetailEmployee", bundle: nil)
+        let employeeDetailController = storyboard.instantiateViewController(withIdentifier: "EmployeeDetailViewController") as! EmployeeDetailViewController
+        employeeDetailController.modalPresentationStyle = UIModalPresentationStyle.popover
+        employeeDetailController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        employeeDetailController.userInfo = userNow
+        self.navigationController?.pushViewControllerM(viewController: employeeDetailController)
+    }
+    func addTapGesture(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openDetailEmployee));
+        imageMain.isUserInteractionEnabled = true;
+        imageMain.isMultipleTouchEnabled = true;
+        imageMain.addGestureRecognizer(tapGesture);
     }
     func initCollectionView(){
         teamCollectionView.teamDataDelegate = self
@@ -45,7 +59,8 @@ class TeamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addHeaderGradient()
-        
+        self.navigationController?.navigationBar.isHidden = false
+
         mainView.layer.cornerRadius = 10
         mainView.clipsToBounds = true
         //initCollectionView()
@@ -55,6 +70,7 @@ class TeamViewController: UIViewController {
         if(self.initalizedView==false){
             self.initalizedView = true;
             initCollectionView()
+            addTapGesture()
         }
         
     }
@@ -80,6 +96,7 @@ extension TeamViewController : TeamDataDelegate {
     }
     
     func employeeSelected(employee user: User) {
+        userNow = user
         if let image = UIImage(named: user.imagePath) {
             imageMain.image = image
         }else{

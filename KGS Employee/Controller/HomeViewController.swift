@@ -53,6 +53,7 @@ class HomeViewController: UIViewController {
         buttonGettingStarted.loadFont(fontName: "Poppins-SemiBold")
         buttonGettingStarted.dropShadow(color: UIColor(named: "DropShadow")!, opacity: 0.3, offset: CGSize(width: 1, height: -1), radius: 30, scale: false)
         buttonGettingStarted.layer.cornerRadius = 20
+        appHomeCollectionView.initialize()
     }
     
     override func viewDidLoad() {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -23,40 +23,40 @@
             <objects>
                 <viewController restorationIdentifier="TeamViewController" storyboardIdentifier="TeamViewController" id="Y6W-OH-hqX" customClass="TeamViewController" customModule="KGS_Employee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQo-Tw-hUH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="650"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="568.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sifat" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-CX-vKb">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="568.33333333333337"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AO1-Vv-1dD" userLabel="mainview">
-                                        <rect key="frame" x="25" y="25" width="364" height="600"/>
+                                        <rect key="frame" x="25" y="25" width="364" height="518.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="wCb-NB-uPJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="364" height="600"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="518.33333333333337"/>
                                                 <color key="backgroundColor" name="LogOut"/>
                                             </imageView>
                                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-Zx-H5E">
-                                                <rect key="frame" x="0.0" y="491" width="364" height="109"/>
+                                                <rect key="frame" x="0.0" y="409" width="364" height="109.33333333333337"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ydz-Zx-H5E" secondAttribute="height" multiplier="323:97" id="d4v-dV-R7z"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v9L-Xx-p8d">
-                                                <rect key="frame" x="0.0" y="538.5" width="364" height="61.5"/>
+                                                <rect key="frame" x="0.0" y="456.66666666666669" width="364" height="61.666666666666686"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rifat Hasnat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sL-9G-tNY">
-                                                        <rect key="frame" x="113.5" y="0.0" width="137.5" height="31"/>
+                                                        <rect key="frame" x="113.33333333333333" y="0.0" width="137.33333333333337" height="31"/>
                                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="22"/>
                                                         <color key="textColor" name="AppsBackground"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Junior" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhd-Si-3Z4">
-                                                        <rect key="frame" x="158" y="39" width="48" height="22.5"/>
+                                                        <rect key="frame" x="158" y="38.999999999999943" width="48" height="22.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="16"/>
                                                         <color key="textColor" red="0.94901960784313721" green="0.95686274509803926" blue="0.97254901960784312" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UK7-5Z-KoX" customClass="TeamMemberCollectionView" customModule="KGS_Employee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="694" width="414" height="102"/>
+                                <rect key="frame" x="0.0" y="568.33333333333337" width="414" height="101.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UK7-5Z-KoX" secondAttribute="height" multiplier="375:92" id="c9p-v3-Wg0"/>
@@ -107,7 +107,7 @@
                                 <cells/>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s7C-CD-cB6" customClass="TeamCollectionView" customModule="KGS_Employee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="796" width="414" height="66"/>
+                                <rect key="frame" x="0.0" y="669.66666666666663" width="414" height="66.333333333333371"/>
                                 <color key="backgroundColor" name="GetStartedBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="s7C-CD-cB6" secondAttribute="width" multiplier="60:375" id="yW8-bg-8Pp"/>
