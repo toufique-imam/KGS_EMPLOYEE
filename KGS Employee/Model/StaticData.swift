@@ -169,4 +169,12 @@ import Foundation
         User.key_full_name,User.key_password,User.key_designation,User.key_phone,User.key_mail,User.key_dept
     ]
     
+    static func getY(x : CGFloat , point1 : CGPoint , point2 : CGPoint) -> CGFloat{
+        let c1 = (point1.x - point2.x)
+        let c2 = (point1.y - point2.y)
+        
+        let y = c2 * x - c2 * point1.x + c1 * point1.y
+        return y / c1
+    }
+    
 }

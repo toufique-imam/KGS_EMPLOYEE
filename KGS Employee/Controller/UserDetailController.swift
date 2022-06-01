@@ -104,7 +104,6 @@ extension UserDetailController : UIImagePickerControllerDelegate , UINavigationC
 extension UserDetailController : TouchDownDelegate {
     
     func updateText(for header: String, value: String)->Bool {
-        print(header , value)
         if(!value.isEmpty && !header.isEmpty && user.updateValue(for: header, value: value)){
             CurrentUser.shared.setLoginUser(user: user)
             return true

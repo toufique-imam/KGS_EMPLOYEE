@@ -44,9 +44,9 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jmj-Lw-owO" customClass="AppSlideCollectionView" customModule="KGS_Employee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="122.5" width="414" height="198.5"/>
+                                <rect key="frame" x="0.0" y="122.5" width="414" height="254"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L1m-jt-tug">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r5c-o7-1Gg">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -55,14 +55,14 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYn-1k-5ps" userLabel="dummy_view">
-                                <rect key="frame" x="0.0" y="311" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="366.5" width="414" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="mg7-PU-P3Y"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G5X-Lk-IUd" customClass="AppScrollCollectionView" customModule="KGS_Employee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="312" width="414" height="550"/>
+                                <rect key="frame" x="0.0" y="367.5" width="414" height="494.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t0P-rl-jld">
                                     <size key="itemSize" width="128" height="128"/>
@@ -78,7 +78,7 @@
                         <constraints>
                             <constraint firstItem="Jmj-Lw-owO" firstAttribute="top" secondItem="aSH-QK-sSP" secondAttribute="bottom" constant="20" id="0GX-Bo-Ojr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aSH-QK-sSP" secondAttribute="trailing" constant="10" id="0LR-Tr-DcN"/>
-                            <constraint firstItem="Jmj-Lw-owO" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="180:375" id="9eL-RD-9jW"/>
+                            <constraint firstItem="Jmj-Lw-owO" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="230:375" id="9eL-RD-9jW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Jmj-Lw-owO" secondAttribute="trailing" id="CY0-oc-LaA"/>
                             <constraint firstItem="aSH-QK-sSP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ftu-th-XvT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="G5X-Lk-IUd" secondAttribute="bottom" id="IC1-e6-rL0"/>

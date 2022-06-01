@@ -28,27 +28,25 @@ class AppCollectionView : UICollectionView {
         self.dataSource = self
         self.delegate = self
         isPagingEnabled = true
+        self.reloadData()
     }
     func goToItem(row: Int){
         let indexPath = IndexPath(row: row, section: 0)
-        print(indexPath)
+        //print(indexPath)
         self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }
 
 extension AppCollectionView : UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("called scrollviewdidscroll" , self.isPagingEnabled)
+        //print("called scrollviewdidscroll" , self.isPagingEnabled)
         scrollDelegate?.collectionViewScrollUpdate(scrollView , false)
     }
     
     override func scrollToItem(at indexPath: IndexPath, at scrollPosition: UICollectionView.ScrollPosition, animated: Bool) {
-        print("ScrollToItem " , self.isPagingEnabled)
         self.isPagingEnabled = false
         super.scrollToItem(at: indexPath, at: scrollPosition, animated: animated)
         self.isPagingEnabled = true
-        print("ScrollToItem " , self.isPagingEnabled)
-
     }
 }
 

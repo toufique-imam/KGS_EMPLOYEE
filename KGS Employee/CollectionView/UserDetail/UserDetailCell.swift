@@ -43,10 +43,8 @@ class UserDetailCell: UICollectionViewCell {
             if let indexNow = indexNow {
                 touchDownDelegate?.touchDown(indexPath: indexNow)
             }
-            print("okk")
         }else{
             submitText()
-            print("okk1")
         }
         isEditing = !isEditing
     }

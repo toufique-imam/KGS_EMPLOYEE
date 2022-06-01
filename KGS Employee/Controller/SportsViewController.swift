@@ -21,9 +21,5 @@ class SportsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         sportsCollectionView.initialize()
-        print("sports view " , self.view.bounds , self.view.frame.width)
-        print("collection view ")
-        print(sportsCollectionView.layer.frame)
-        print(sportsCollectionView.layer.bounds)
     }
 }

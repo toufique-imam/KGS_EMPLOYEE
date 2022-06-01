@@ -40,11 +40,7 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(appSettingsPagevc, animated: true)
     }
     
-    @IBAction func pageControlValueChanged(_ sender: UIPageControl) {
-        //TODO: fix this
-        print("current page " , sender.currentPage)
-        appHomeCollectionView.goToItem(row: sender.currentPage)
-    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         appHomeCollectionView.scrollDelegate = self
@@ -54,11 +50,11 @@ class HomeViewController: UIViewController {
         buttonGettingStarted.dropShadow(color: UIColor(named: "DropShadow")!, opacity: 0.3, offset: CGSize(width: 1, height: -1), radius: 30, scale: false)
         buttonGettingStarted.layer.cornerRadius = 20
         appHomeCollectionView.initialize()
+        appHomeCollectionView.goToItem(row: 333)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appHomeCollectionView.goToItem(row: 333)
         scheduledTimerWithTimeInterval()
     }
     
@@ -106,7 +102,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController : ScrollDelegate {
     func collectionViewScrollUpdate(_ scrollView: UIScrollView, _ ended: Bool) {
-        print("called update scroll indicator " , self.pageControl.currentPage , scrollView.contentOffset)
+        //print("called update scroll indicator " , self.pageControl.currentPage , scrollView.contentOffset)
         let x = Int((scrollView.contentOffset.x / scrollView.frame.width).rounded(.toNearestOrAwayFromZero))
         self.pageControl.currentPage = x % 3
         if(ended){
