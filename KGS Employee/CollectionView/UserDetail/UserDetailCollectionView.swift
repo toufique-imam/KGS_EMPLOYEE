@@ -39,9 +39,9 @@ extension UserDetailCollectionView : UICollectionViewDataSource {
         let headerName = StaticData.userDetailHeaders[indexPath.row]
         cell.loadCell(header: headerName, value: user?.getValue(for: headerName) ?? "user not set")
         if(indexPath.row+1==StaticData.userDetailHeaders.count){
-            cell.viewSeperator.isHidden = true
+//            cell.viewSeperator.isHidden = true
         }else{
-            cell.viewSeperator.isHidden = false
+//            cell.viewSeperator.isHidden = false
         }
         cell.indexNow = indexPath
         cell.touchDownDelegate = touchDownDelegate

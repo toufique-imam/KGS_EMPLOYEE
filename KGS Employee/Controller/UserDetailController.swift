@@ -114,7 +114,7 @@ extension UserDetailController : TouchDownDelegate {
         }
     }
     func touchDown(indexPath: IndexPath) {
-        self.userCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+        //self.userCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
     }
     
     func invalidData(for header : String , value:String){
