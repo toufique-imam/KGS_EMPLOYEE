@@ -29,13 +29,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-9G-6y5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-9G-6y5">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jl5-q2-q5a" userLabel="mainview">
                                 <rect key="frame" x="28.5" y="151" width="357" height="594"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rifat" translatesAutoresizingMaskIntoConstraints="NO" id="JzN-Ld-hD6">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JzN-Ld-hD6">
                                         <rect key="frame" x="0.0" y="0.0" width="357" height="422"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JzN-Ld-hD6" secondAttribute="height" multiplier="323:382" id="eT2-bU-zTE"/>
@@ -168,7 +168,6 @@
     </scenes>
     <resources>
         <image name="close" width="46" height="46"/>
-        <image name="rifat" width="316" height="438"/>
         <namedColor name="AppsBackground">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

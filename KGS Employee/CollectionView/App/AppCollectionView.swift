@@ -16,6 +16,8 @@ class AppCollectionView : UICollectionView {
     let itemsPerRow :CGFloat = 1
     let itemsPerCol :CGFloat = 1
     
+    var firstLoad = false;
+    
     weak var scrollDelegate : ScrollDelegate? = nil
     
     //register the nib cell
@@ -27,13 +29,14 @@ class AppCollectionView : UICollectionView {
     func initialize(){
         self.dataSource = self
         self.delegate = self
-        isPagingEnabled = true
+        isPagingEnabled = false
         self.reloadData()
+        isPagingEnabled = true
     }
-    func goToItem(row: Int){
+    func goToItem(row: Int , animated:Bool = false){
         let indexPath = IndexPath(row: row, section: 0)
         //print(indexPath)
-        self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
     }
 }
 
@@ -66,12 +69,10 @@ extension AppCollectionView : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let cell = cell as? AppCollectionViewCell
-        else {
-            preconditionFailure("invalid cell type")
+        if(firstLoad==false){
+            goToItem(row: 333)
         }
-        let appInfo = StaticData.appDataHome[indexPath.row%3]
-        cell.loadCell(appInfo: appInfo)
+        firstLoad = true
     }
 }
 

@@ -44,50 +44,8 @@ extension AppSlideCollectionView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if(isFirstLoad){
             goToItem(at: 332)
-            //goToItem(at: 333, animated: true)
         }
         isFirstLoad = false
-    }
-    
-    func cellConfig(centerX : CGFloat , frame : CGRect) {
-        print("Input ",centerX , frame)
-        //var colorIdx=0;
-        //        print("CC " , self.visibleCells.count)
-        for cell in self.visibleCells {
-            var offsetX = centerX - cell.center.x
-            print("cell data ",cell.center , cell.bounds , centerX , offsetX)
-            if offsetX < 0 {
-                offsetX *= -1
-            }
-            
-            //cell.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            if(offsetX > 80){
-                //make it smaller
-                let offsetPercentage = (offsetX - 70) / self.bounds.width
-                var scaleX = 1 - offsetPercentage
-                print("min scale ",scaleX)
-                scaleX = max(scaleX , 0.85)
-                cell.transform = CGAffineTransform(scaleX: scaleX, y: scaleX)
-            }
-            else{
-                //make it bigger
-                //offset joto kom toto bhalo
-                offsetX = max(offsetX , 40)
-                let scaleX = StaticData.getY(x: offsetX, point1: p1, point2: p2)
-                print("max scale ",scaleX)
-                cell.transform = CGAffineTransform(scaleX: scaleX, y: scaleX)
-            }
-        }
-        
-    }
-    
-    func cellConfig(contentOffset: CGPoint , frame: CGRect){
-        let centerX = contentOffset.x + frame.size.width / 2
-        cellConfig(centerX: centerX, frame: frame)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //cellConfig(contentOffset: scrollView.contentOffset, frame: scrollView.frame)
     }
 }
 
@@ -116,10 +74,6 @@ extension AppSlideCollectionView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = getAvailableHeight(collectionView)
         let width = ((220 * height)/136)
-        //print(width , height)
-        
-       // print("CC 2" , collectionView.visibleCells.count)
-        // cellConfig(contentOffset: self.contentOffset, frame: self.frame)
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

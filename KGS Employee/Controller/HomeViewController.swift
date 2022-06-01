@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
         buttonGettingStarted.dropShadow(color: UIColor(named: "DropShadow")!, opacity: 0.3, offset: CGSize(width: 1, height: -1), radius: 30, scale: false)
         buttonGettingStarted.layer.cornerRadius = 20
         appHomeCollectionView.initialize()
-        appHomeCollectionView.goToItem(row: 333)
+      //  appHomeCollectionView.goToItem(row: 333)
     }
     
     override func viewDidLoad() {

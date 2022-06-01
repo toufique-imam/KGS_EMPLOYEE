@@ -15,11 +15,14 @@ class UserDetailController: UIViewController {
     @IBOutlet weak var userCollectionView: UserDetailCollectionView!
     var user : User = CurrentUser.shared.getCurrentUser()!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initNavigationController()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.initKeyboardNotification()
         initialize()
-        initNavigationController()
         self.hideKeyboardWhenTappedAround()
         imageMain.layer.cornerRadius =  0.5 * imageMain.bounds.size.width
     }
@@ -68,6 +71,7 @@ class UserDetailController: UIViewController {
 //MARK: keyboard
 extension UserDetailController {
     func initKeyboardNotification(){
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -85,8 +89,11 @@ extension UserDetailController {
             return
         }
         let adjustmentHeight = (keyboardFrame.cgRectValue.height + 20) * (show ? 1 : -1)
+        print(adjustmentHeight , userCollectionView.contentInset)
         userCollectionView.contentInset.bottom += adjustmentHeight
         userCollectionView.verticalScrollIndicatorInsets.bottom += adjustmentHeight
+        
+        print(userCollectionView.contentInset)
     }
 }
 
