@@ -86,7 +86,7 @@ extension AppCollectionView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = getAvailableWidth(collectionView)
         let height = (335 * width) / 375
-        print(width , height)
+        //print(width , height)
         return CGSize(width: getAvailableWidth(collectionView), height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

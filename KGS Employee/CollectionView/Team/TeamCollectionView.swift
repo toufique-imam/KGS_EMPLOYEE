@@ -10,7 +10,7 @@ import UIKit
 class TeamCollectionView: UICollectionView {
     
   //  let itemsPerRow : CGFloat = 1
-    let sectionInsets = UIEdgeInsets(top: 16, left: 18, bottom: 16, right: 20)
+    let sectionInsets = UIEdgeInsets(top: 15, left: 18, bottom: 15, right: 18)
     //load the team name
     //when selected send the data to delegate and change the button
     weak var teamDataDelegate : TeamDataDelegate? = nil
@@ -69,18 +69,23 @@ extension TeamCollectionView : UICollectionViewDelegateFlowLayout {
         sectionInsets.left
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = getAvailableWidth(collectionView)
-        let height = Int((30 * width)/92)
+        //var width = getAvailableWidth(collectionView)
+        let height = getAvailableHeight(collectionView)
+        var width = (height * 92) / 29.0
+        if let strNow = teamDataDelegate?.getTeamName(for: indexPath){
+            width += (CGFloat(strNow.count) * 2)
+        }
+        print(width , height)
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         sectionInsets
     }
     
-    func getAvailableWidth(_ collectionView: UICollectionView) -> Int {
-        let paddingSpace =  sectionInsets.left //todo is it correct??
-        let availableWidth = collectionView.bounds.width - paddingSpace
-        return Int((97.0*availableWidth)/375.0)
+    func getAvailableHeight(_ collectionView: UICollectionView) -> CGFloat {
+        let paddingSpace =  sectionInsets.top * 2
+        let availableHeight = collectionView.bounds.height - paddingSpace
+        return availableHeight
     }
 }
 
