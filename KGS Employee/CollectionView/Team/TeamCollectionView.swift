@@ -71,9 +71,11 @@ extension TeamCollectionView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //var width = getAvailableWidth(collectionView)
         let height = getAvailableHeight(collectionView)
-        var width = (height * 92) / 29.0
+        var width = (height * 92) / 29.0 + 5
+        //14-width
+        //x -> (width*x)/14
         if let strNow = teamDataDelegate?.getTeamName(for: indexPath){
-            width += (CGFloat(strNow.count) * 2)
+            width = (width * CGFloat(strNow.count)) / 14.0;
         }
         print(width , height)
         return CGSize(width: width, height: height)

@@ -41,7 +41,7 @@ import Foundation
         
         AppInfo(name: "Slide Show", description: "Recolor & edit your pictures", imagePath: "", iconPath: "slide_show"),
     ]
-    static let teamNames : [String] = [ "Software Engineer",
+    static let teamNames : [String] = [ "Software Engineer Software Engineer",
                                         "UI/UX Designer",
                                         "QA Engineer",
                                         "Manager Accounts",
