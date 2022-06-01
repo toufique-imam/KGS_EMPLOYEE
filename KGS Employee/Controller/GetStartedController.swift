@@ -96,28 +96,31 @@ class GetStartedController : UIViewController {
         addChild(sportsViewController!)
         addChild(teamViewController!)
         addChild(projectViewController!)
-        
-        self.containerView.addSubview(sportsViewController!.view)
-        self.containerView.addSubview(teamViewController!.view)
-        self.containerView.addSubview(projectViewController!.view)
-        
+    }
+    
+    func addViewController(controller : UIViewController){
+        if(!self.containerView.subviews.contains(controller.view)){
+            self.containerView.addSubview(controller.view)
+        }
     }
     func loadTeams(){
+        addViewController(controller: teamViewController!)
         self.navigationItem.title = "KGS Teams"
         self.teamViewController?.view.frame = self.containerView.bounds
-        //self.showDetailViewController(<#T##vc: UIViewController##UIViewController#>, sender: <#T##Any?#>)
         self.containerView.bringSubviewToFront(teamViewController!.view)
         containerView.didMoveToWindow()
     }
     func loadSports(){
+        addViewController(controller: sportsViewController!)
         self.navigationItem.title = "KGS Sports"
         self.sportsViewController?.view.frame = self.containerView.bounds
         self.containerView.bringSubviewToFront(sportsViewController!.view)
         containerView.didMoveToWindow()
     }
     
-    func loadProjects(_ type: ControllerType){
-        self.navigationItem.title = type == .project ? "Ongoing Projects" : "Holidays 2020"
+    func loadProjects(_ type : ControllerType){
+        addViewController(controller: projectViewController!)
+        self.navigationItem.title = type == .project ? "Ongoing Projects" : "Holidays"
         self.projectViewController?.view.frame = self.containerView.bounds
         self.containerView.bringSubviewToFront(projectViewController!.view)
         containerView.didMoveToWindow()

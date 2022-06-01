@@ -159,8 +159,11 @@ import Foundation
         
         AppInfo(name: "Vijayadashami", description: "Friday", imagePath: "25", iconPath: "Dec") ,
     ]
-    @objc static let holidayColors : [Int] = [
-        0xE77DEB,0x8C73E0,0x4BC18B,0xE25454
+    @objc static let holidayColors : [[Int]] = [
+        [226, 84, 84, 1],
+        [75, 193, 139, 1],
+        [140, 115, 224, 1],
+        [231, 125, 235, 1]
     ]
     static let userDetailHeaders : [String] = [
         User.key_full_name,User.key_password,User.key_designation,User.key_phone,User.key_mail,User.key_dept

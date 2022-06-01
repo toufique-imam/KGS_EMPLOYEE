@@ -8,6 +8,7 @@
 #import "ProjectViewController.h"
 #import "ProjectCollectionView.h"
 #import "KGS_Employee-Swift.h"
+#define RGBA(r, g, b, a) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:a]
 
 @interface ProjectViewController ()<
 ProjectDelegate
@@ -48,8 +49,12 @@ ProjectDelegate
 }
 
 - (UIColor* _Nonnull)getColorFor:(NSIndexPath * _Nonnull)indexPath {
-    int colorCode = [StaticData.holidayColors[indexPath.row] intValue];
-    return [UIColor colorFromHexCodeWithColorCode:colorCode];
+    CGFloat r = [StaticData.holidayColors[indexPath.row][0] intValue];
+    CGFloat g = [StaticData.holidayColors[indexPath.row][1] intValue];
+    CGFloat b = [StaticData.holidayColors[indexPath.row][2] intValue];
+    CGFloat a = [StaticData.holidayColors[indexPath.row][3] intValue];
+    
+    return RGBA(r, g, b, a);
 }
 
 

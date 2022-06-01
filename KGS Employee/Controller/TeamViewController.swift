@@ -88,8 +88,6 @@ extension TeamViewController : TeamDataDelegate {
     
     func teamSelected(teamIndex : IndexPath) {
         print("team selected " , teamIndex)
-//        teamMemberCollectionView.columnIndex = teamIndex
-//        teamMemberCollectionView.selectedIndex = indexZero
         teamMemberCollectionView.reloadData()
         teamMemberCollectionView.setColumnIndex(indexPath: teamIndex)
         employeeSelected(employee: StaticData.employees[teamIndex.row][0])
