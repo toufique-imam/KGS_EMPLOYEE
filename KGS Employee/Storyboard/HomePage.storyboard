@@ -37,30 +37,8 @@
                                 <color key="textColor" name="TitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-CV-2LH">
-                                <rect key="frame" x="0.0" y="724" width="414" height="25"/>
-                                <color key="pageIndicatorTintColor" red="0.35294117647058826" green="0.35686274509803922" blue="0.42745098039215684" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" name="TitleColor"/>
-                                <connections>
-                                    <action selector="pageControlValueChanged:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ygu-aZ-k8T"/>
-                                </connections>
-                            </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-Bf-Oaz">
-                                <rect key="frame" x="41.333333333333343" y="759" width="331.33333333333326" height="53"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TVb-Bf-Oaz" secondAttribute="height" multiplier="300:48" id="eF4-Bn-IiK"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Get started">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="goToGetStarted:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h1t-qZ-9bi"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wvA-1K-Nr5" customClass="AppCollectionView" customModule="KGS_Employee" customModuleProvider="target">
-                                <rect key="frame" x="10" y="357" width="394" height="352"/>
+                                <rect key="frame" x="10" y="431" width="394" height="352"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wvA-1K-Nr5" secondAttribute="height" multiplier="375:335" id="bcA-Y9-CRg"/>
@@ -73,20 +51,43 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-CV-2LH">
+                                <rect key="frame" x="0.0" y="788" width="414" height="25"/>
+                                <color key="pageIndicatorTintColor" red="0.35294117647058826" green="0.35686274509803922" blue="0.42745098039215684" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" name="TitleColor"/>
+                                <connections>
+                                    <action selector="pageControlValueChanged:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ygu-aZ-k8T"/>
+                                </connections>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-Bf-Oaz">
+                                <rect key="frame" x="41.333333333333343" y="823" width="331.33333333333326" height="53"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TVb-Bf-Oaz" secondAttribute="height" multiplier="300:48" id="eF4-Bn-IiK"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Get started">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToGetStarted:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h1t-qZ-9bi"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="T4h-Pp-gzO"/>
                         <color key="backgroundColor" name="GetStartedBackground"/>
                         <constraints>
                             <constraint firstItem="TVb-Bf-Oaz" firstAttribute="top" secondItem="Hcr-CV-2LH" secondAttribute="bottom" constant="10" id="2am-AZ-Vvv"/>
-                            <constraint firstItem="Hcr-CV-2LH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4ps-CC-xo7"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hcr-CV-2LH" secondAttribute="trailing" id="8QL-Uw-laJ"/>
+                            <constraint firstItem="Hcr-CV-2LH" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="4ps-CC-xo7"/>
+                            <constraint firstAttribute="trailing" secondItem="Hcr-CV-2LH" secondAttribute="trailing" id="8QL-Uw-laJ"/>
                             <constraint firstItem="TVb-Bf-Oaz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CAI-RO-VGP"/>
                             <constraint firstItem="4g6-hW-rdi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CLg-5D-3Xp"/>
-                            <constraint firstItem="4g6-hW-rdi" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="DhW-b7-6Qb"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TVb-Bf-Oaz" secondAttribute="bottom" constant="50" id="E2F-Qk-4dH"/>
-                            <constraint firstItem="Hcr-CV-2LH" firstAttribute="top" secondItem="wvA-1K-Nr5" secondAttribute="bottom" constant="15" id="LR6-Sh-ts7"/>
-                            <constraint firstItem="wvA-1K-Nr5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="TFx-w3-ogk"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wvA-1K-Nr5" secondAttribute="trailing" constant="10" id="hCM-qc-zJL"/>
+                            <constraint firstItem="4g6-hW-rdi" firstAttribute="top" secondItem="T4h-Pp-gzO" secondAttribute="top" constant="10" id="DhW-b7-6Qb"/>
+                            <constraint firstAttribute="bottom" secondItem="TVb-Bf-Oaz" secondAttribute="bottom" constant="20" id="E2F-Qk-4dH"/>
+                            <constraint firstItem="Hcr-CV-2LH" firstAttribute="top" secondItem="wvA-1K-Nr5" secondAttribute="bottom" constant="5" id="LR6-Sh-ts7"/>
+                            <constraint firstItem="wvA-1K-Nr5" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="10" id="TFx-w3-ogk"/>
+                            <constraint firstItem="wvA-1K-Nr5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eGN-Qr-7O7" secondAttribute="bottom" constant="10" id="e3V-nY-vcq"/>
+                            <constraint firstAttribute="trailing" secondItem="wvA-1K-Nr5" secondAttribute="trailing" constant="10" id="hCM-qc-zJL"/>
                             <constraint firstItem="eGN-Qr-7O7" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lQe-6h-vx1"/>
                             <constraint firstItem="eGN-Qr-7O7" firstAttribute="top" secondItem="4g6-hW-rdi" secondAttribute="bottom" constant="5" id="pfS-qc-VzB"/>
                             <constraint firstItem="TVb-Bf-Oaz" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="48:812" id="xaw-wh-Kmp"/>

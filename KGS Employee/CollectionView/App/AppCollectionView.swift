@@ -41,6 +41,8 @@ extension AppCollectionView : UICollectionViewDelegate {
         print("called scrollViewDidEndDecelerating" , self.isPagingEnabled)
         scrollDelegate?.collectionViewScrollUpdate(scrollView , true)
     }
+    
+    
     override func scrollToItem(at indexPath: IndexPath, at scrollPosition: UICollectionView.ScrollPosition, animated: Bool) {
         print("ScrollToItem " , self.isPagingEnabled)
         self.isPagingEnabled = false
