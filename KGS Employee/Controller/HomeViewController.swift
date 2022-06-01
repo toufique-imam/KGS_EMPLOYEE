@@ -107,8 +107,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController : ScrollDelegate {
     func collectionViewScrollUpdate(_ scrollView: UIScrollView, _ ended: Bool) {
         print("called update scroll indicator " , self.pageControl.currentPage , scrollView.contentOffset)
-        let x = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-        print(x)
+        let x = Int((scrollView.contentOffset.x / scrollView.frame.width).rounded(.toNearestOrAwayFromZero))
         self.pageControl.currentPage = x % 3
         if(ended){
             self.appHomeCollectionView.goToItem(row: x)
